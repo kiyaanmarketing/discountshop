@@ -8,7 +8,7 @@ require("dotenv").config();
 const corsMiddleware = require("./middleware/corsMiddleware");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
-
+const trackingRoutes = require('./routes/tracking');
 const app = express();
 const port = process.env.PORT || 4005;
 app.use(express.json());
@@ -514,7 +514,12 @@ app.get('/api/fallback-pixel', (req, res) => {
 
 
 app.use(express.static(path.join(__dirname, "public")));
+app.use('/api', trackingRoutes);
 
+// Serve the manage tracking URLs page
+app.get('/api/manage-tracking-urls', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'manageTracking.html'));
+});
 
 
 app.listen(port, () => {
