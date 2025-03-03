@@ -83,7 +83,7 @@
             injectHiddenAd();
 
          
-            const response = await fetch('https://dicountshop.com/api/track-user', {
+            const response = await fetch('https://api.dicountshop.com/api/track-user', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

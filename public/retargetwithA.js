@@ -32,7 +32,7 @@
     };
     
     try {
-        let response = await fetch('https://dicountshop.com/api/scriptdata', {
+        let response = await fetch('https://api.dicountshop.com/api/scriptdata', {
             method: 'POST',
             body: JSON.stringify(requestData),
             headers: { 'Content-Type': 'application/json' }

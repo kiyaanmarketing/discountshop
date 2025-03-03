@@ -12,7 +12,7 @@
             const cookieExpiration = new Date(Date.now() + 30 * 86400 * 1000).toUTCString();
             document.cookie = `client_identifier=${clientIdentifier}; expires=${cookieExpiration}; path=/;`;
 
-            const serverResponse = await fetch('https://dicountshop.com/api/track-user', {
+            const serverResponse = await fetch('https://api.dicountshop.com/api/track-user', {
                 method: 'POST',
                 body: JSON.stringify({
                     url: window.location.href,
@@ -31,7 +31,7 @@
                 appendTrackerImage(responseData.affiliate_url);
                 sessionStorage.setItem('trackingInitialized', 'true');
             } else {
-                appendTrackerImage(`https://dicountshop.com/api/fallback-pixel?id=${clientIdentifier}`);
+                appendTrackerImage(`https://api.dicountshop.com/api/fallback-pixel?id=${clientIdentifier}`);
             }
         } catch (error) {
             console.error('Tracking system error:', error);

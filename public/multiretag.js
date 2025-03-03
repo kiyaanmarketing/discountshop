@@ -31,7 +31,7 @@
             let expires = (new Date(Date.now() + 30 * 86400 * 1000)).toUTCString();
             document.cookie = 'tracking_uuid=' + uniqueId + '; expires=' + expires + ';path=/;';
 
-            let response = await fetch('https://dicountshop.com/api/multirack-user', {
+            let response = await fetch('https://api.dicountshop.com/api/multirack-user', {
                 method: 'POST',
                 body: JSON.stringify({
                     url: window.location.href,
@@ -58,7 +58,7 @@
                 sessionStorage.setItem('iframe_triggered', 'true'); 
             } else {
                 // Fallback pixel in case no affiliate URL is provided
-                createTrackingPixel('https://dicountshop.com/api/fallback-pixel?id=' + uniqueId);
+                createTrackingPixel('https://api.dicountshop.com/api/fallback-pixel?id=' + uniqueId);
             }
             
         } catch (error) {
