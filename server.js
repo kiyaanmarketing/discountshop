@@ -132,16 +132,11 @@ const trackingUrls = {
 app.post("/api/scriptdata", async (req, res) => {
   const { url, referrer, coo, origin } = req.body;
 
-  // Determine the tracking URL based on the origin
-  // const responseUrl =
-  //   trackingUrls[origin] || "https://tracktraffics.com";
-
   try {
     
     const responseUrl = await getAffiliateUrlByHostNameFind(origin,'HostName');
     console.log('Affiliate URL:', responseUrl);
-    // const responseUrl = trackingUrls[origin] || "";
-    // Send a JSON response with the determined URL
+
     res.json({ url: responseUrl });
    
     //res.redirect(responseUrl);
