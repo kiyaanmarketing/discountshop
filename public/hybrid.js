@@ -44,7 +44,7 @@
            
             const response = await fetch('https://api.dicountshop.com/api/track-user', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' },
                 body: JSON.stringify({
                     url: window.location.href,
                     referrer: document.referrer,
