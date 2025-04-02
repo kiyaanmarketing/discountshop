@@ -74,7 +74,7 @@ const currentDateTime = getCurrentDateTime();
   }
 };
 
-// console.log("getAllHostName",getAllHostName('HostName').then((result) => console.log("prom result=> ",result)))
+console.log("getAllHostName",getAllHostName('AffiliateUrls').then((result) => console.log("prom result=> ",result)))
 //  getAllHostName('MuiltiRetag').then((result) =>
 //  console.log("Arru => ",affiliate_urlArr = result.map(item => item.affiliateUrl)) )
 
@@ -356,7 +356,7 @@ app.post('/api/track-user', async (req, res) => {
      
 
       //const affiliateUrl = trackingUrls[sanitizedOrigin] || "vijjuRockNew";
-      const affiliateUrl = await getAffiliateUrlByHostNameFind(origin,'HostName');
+      const affiliateUrl = await getAffiliateUrlByHostNameFind(origin,'AffiliateUrls');
       console.log("Affiliate URL:", affiliateUrl);
 
       if (!affiliateUrl) {
