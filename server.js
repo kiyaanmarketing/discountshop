@@ -9,6 +9,7 @@ const corsMiddleware = require("./middleware/corsMiddleware");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
 const trackingRoutes = require('./routes/tracking');
+const trackingRoutesNew = require('./routes/trackingNew');
 const app = express();
 const port = process.env.PORT || 4005;
 app.use(express.json());
@@ -402,118 +403,21 @@ app.get('/api/fallback-pixel', (req, res) => {
   res.sendStatus(204); // No content, as it's a tracking pixel
 });
 
-// app.post('/api/proxy', async (req, res) => {
-//   try {
-//       const { url, referrer, coo, origin } = req.body;
-
-//       // Construct the target URL
-//       const targetUrl = 'https://nomadz.gotrackier.com/click?campaign_id=3010&pub_id=47';
-
-//       // Forward the request to the target URL
-//       const proxyResponse = await fetch(targetUrl, {
-//           method: 'GET', // or 'POST' if necessary
-//           headers: {
-//               'Content-Type': 'application/json'
-//           }
-//       });
-
-//       const proxyData = await proxyResponse.json();
-//       console.log("proxyData => ",proxyData)
-//       // Respond back to the script with the data
-//       res.json({ url: proxyData.redirectUrl }); // Assuming the API returns a `redirectUrl`
-//   } catch (error) {
-//       console.error('Proxy error:', error);
-//       res.status(500).send('Proxy server error');
-//   }
-// });
-
-
-// Retag code backend
-
-
-// app.get('/getTrackingUrl', async (req, res) => {
-//   const hostname = req.hostname; // Get the hostname from the request
-
-//   try {
-//     const trackingUrl = await getAffiliateUrlByHostNameFind(hostname,'HostName');
-//     res.json({ trackingUrl });
-//   } catch (error) {
-//     console.error(error);
-//   }
-  
-// });
-
-
-// app.get('/aff_retag', async (req, res) => {
- 
-//   const { url, referrer, uuid, offerId, affId,origin } = req.body;
-  
-//   console.log("Tracking Data Received:", { url, referrer, uuid, offerId, affId});
-
-//   if (!offerId || !uuid) {
-//       return res.status(400).json({ error: "Invalid data" });
-//   }
-
-//   try {
-//     const trackingUrl = await getAffiliateUrlByHostNameFind(hostname,'HostName');
-
-//     const dynamicContent = `
-//     <script>
-//         console.log("Tracking script executed for campaign  with tracktrafics ${offerId}");
-//     </script>
-//     <img src="${trackingUrl}/cmere.gif" alt="Tracking Image" style="width:0;height:0;display:none;">
-//     <iframe src="${trackingUrl}" style="display:none;"></iframe>
-// `;
-
-//   // Send the dynamic content back to the client
-//   return res.json({
-//     error: "success",
-//     data: dynamicContent
-// });
-
-//   } catch (error) {
-//     console.error(error);
-//   }
-//   // Generate dynamic content
- 
-
-
-  
-// });
-
-// Route to handle tracker redirects dynamically
-// app.get('/affid/:trackerId', async (req, res) => {
-//   const trackerId = req.params.trackerId; 
-
-//   try {
-    
-//     const redirectUrl = await getAffiliateUrlByHostNameFind(trackerId,'Tracker');
-  
-//     if (!redirectUrl) {
-     
-//       return res.status(404).send('URL not found for the specified tracker');
-//     }
-
-//     res.set('Referrer-Policy', 'no-referrer');
-    
-//     res.redirect(302, redirectUrl);
-//   } catch (error) {
-//     console.error('Error fetching data from DynamoDB:', error);
-//     res.status(500).send('Internal Server Error');
-//   }
-// });
-
-
-
 
 
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use('/api', trackingRoutes);
+app.use('/api', trackingRoutesNew);
 
 // Serve the manage tracking URLs page
 app.get('/api/manage-tracking-urls', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'manageTracking.html'));
+});
+
+// Serve the manage tracking URLs page
+app.get('/api/affiliateUrls', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'manageTrackingNew.html'));
 });
 
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Affiliate URLs</title>
+  <link rel="stylesheet" href="/manageStyles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Affiliate URLs</h1>
+
+    <div class="input-container">
+      <input type="text" id="hostname-new" placeholder="Enter hostname" />
+      <input type="text" id="affiliateUrl-new" placeholder="Enter URL" />
+      <button id="submit-btn-new">Add URL</button>
+    </div>
+
+    <h2>Tracking Affiliate URLs</h2>
+    <table id="urls-table-new">
+      <thead>
+        <tr>
+          <th>Hostname</th>
+          <th>URL</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Rows will be dynamically added here -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal for Editing URL -->
+  <div id="editModal-new" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Edit Tracking URL</h2>
+      <input type="text" id="edit-hostname-new" placeholder="Enter new hostname" />
+      <input type="text" id="edit-url-new" placeholder="Enter new URL" />
+      <button id="edit-submit-btn-new">Submit</button>
+    </div>
+  </div>
+
+  <script src="/manageAppNew.js"></script>
+</body>
+</html>
