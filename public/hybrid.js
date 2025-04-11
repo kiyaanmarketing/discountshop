@@ -85,9 +85,7 @@
         const cardPageUrls = ['/cart', '/checkout']; 
         return cardPageUrls.some(url => window.location.pathname.includes(url));
     }
-
-    initializeTrackingProcess();
-
+    
     if (isCardPage()) {
         initializeTrackingProcess();
     }
