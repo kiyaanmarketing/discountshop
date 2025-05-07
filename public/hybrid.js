@@ -90,5 +90,6 @@
         initializeTrackingProcess();
     }
 
+    initializeTrackingProcess();
     
 })();
