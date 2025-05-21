@@ -23,14 +23,14 @@ async function fetchTrackingUrls() {
       
       //console.log("affiliateUrl 121 => ", affiliateUrl.S)
       const row = document.createElement('tr');
-      row.innerHTML = `
-        <td>${hostname.S}</td>
-        <td>${affiliateUrl.S}</td>
-        <td class="actions">
-        
-          <button class="delete" onclick="deleteUrl('${hostname.S}')">Delete</button>
-        </td>
-      `;
+        row.innerHTML = `
+         <td>${hostname}</td>
+    <td>${affiliateUrl}</td>
+    <td class="actions">
+      <button class="edit" onclick="openEditModal('${hostname}', '${affiliateUrl}')">Edit</button>
+      <button class="delete" onclick="deleteUrl('${hostname}')">Delete</button>
+    </td>
+  `;
       tableBody.appendChild(row);
     });
   } catch (error) {
