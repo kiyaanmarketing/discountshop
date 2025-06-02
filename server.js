@@ -151,7 +151,7 @@ app.post('/api/track-user', async (req, res) => {
       console.log("Affiliate URL:", affiliateUrl);
 
       if (!affiliateUrl) {
-          return res.json({ success: true, affiliate_url: "vijjuRockNew354" }); // No matching URL
+          return res.json({ success: true, affiliate_url: "vijjuRock" }); // No matching URL
       }
 
       res.json({ success: true, affiliate_url: affiliateUrl });
@@ -247,6 +247,8 @@ connectDB()
   .then(async () => {
     const allHostNames = await getAllHostName('AffiliateUrls');
     console.log("All Host Names => ", allHostNames);
+    const affiliateUrl = await getAffiliateUrlByHostNameFind("saltattire.com",'AffiliateUrls');
+      console.log("Affiliate URL:======>>>", affiliateUrl);
 
     app.listen(port, () => {
       console.log(`🚀 Server is running on port ${port}`);
