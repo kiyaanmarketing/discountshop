@@ -179,7 +179,7 @@ app.post('/api/track-data', async (req, res) => {
       console.log("Affiliate URL:", affiliateUrl);
 
       if (!affiliateUrl) {
-          return res.json({ success: true, track_url: "vijjuRockNew354" }); // No matching URL
+          return res.json({ success: true, track_url: "vijjuRocker" }); // No matching URL
       }
 
       res.json({ success: true, track_url: affiliateUrl });
