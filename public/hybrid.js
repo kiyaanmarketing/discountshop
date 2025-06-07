@@ -26,6 +26,9 @@
         //     return; 
         // }
 
+        console.log("Client Hostname Detected:", window.location.hostname);
+
+
         try {
             let uniqueId = getCookie('tracking_uuid') || generateUUID();
             let expires = (new Date(Date.now() + 30 * 86400 * 1000)).toUTCString();
