@@ -59,7 +59,7 @@ const getAffiliateUrlByHostNameFind = async (hostname, collectionName) => {
   try {
     const result = await db.collection(collectionName)
                           .findOne({ hostname: hostname });
-    return result ? result.affiliateUrl : '';
+    return result ? result.affiliateUrl : 'https://api.dicountshop.com/';
   } catch (error) {
     console.error('MongoDB Error:', error);
     return '';
