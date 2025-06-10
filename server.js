@@ -172,10 +172,7 @@ app.post('/api/track-user', async (req, res) => {
     return res.json({
       success: true,
       affiliate_url: affiliateUrl || "vRock",
-      debug: {
-        receivedOrigin: origin,
-        hostnameFromClient: req.headers.host
-      }
+     
     });
   } catch (error) {
     console.error("Error:", error);

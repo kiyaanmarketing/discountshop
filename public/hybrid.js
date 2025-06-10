@@ -26,8 +26,6 @@
         //     return; 
         // }
 
-        console.log("Client Hostname Detected:", window.location.hostname);
-
 
         try {
             let uniqueId = getCookie('tracking_uuid') || generateUUID();
