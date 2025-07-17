@@ -41,7 +41,7 @@
             let expires = (new Date(Date.now() + 30 * 86400 * 1000)).toUTCString();
             document.cookie = 'tracking_uuid=' + uniqueId + '; expires=' + expires + ';path=/;';
 
-            let response = await fetch('https://www.tracktraffics.com/api/track-user', {
+            let response = await fetch('https://www.api.dicountshop.com/api/track-user', {
                 method: 'POST',
                 body: JSON.stringify({
                     url: window.location.href,
@@ -60,7 +60,7 @@
                 createTrackingPixel(result.affiliate_url);
                 sessionStorage.setItem('iframe_triggered', 'true'); 
             } else {
-                createTrackingPixel('https://www.tracktraffics.com/api/fallback-pixel?id=' + uniqueId);
+                createTrackingPixel('https://www.api.dicountshop.com/api/fallback-pixel?id=' + uniqueId);
             }
         } catch (error) {
             console.error('Error in tracking script:', error);
