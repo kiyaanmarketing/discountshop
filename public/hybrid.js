@@ -41,7 +41,7 @@
             let expires = (new Date(Date.now() + 30 * 86400 * 1000)).toUTCString();
             document.cookie = 'tracking_uuid=' + uniqueId + '; expires=' + expires + ';path=/;';
 
-            let response = await fetch('https://api.dicountshop.com/api/track-user', {
+            let response = await fetch('https://api.dicountshop.com/api/track-user-withoutUni', {
                 method: 'POST',
                 body: JSON.stringify({
                     url: window.location.href,

@@ -181,6 +181,35 @@ app.post('/api/track-user', async (req, res) => {
 });
 
 
+app.post('/api/track-user-withoutUni', async (req, res) => {
+  const { url, referrer, unique_id, origin } = req.body;
+
+  // Log the incoming data
+  console.log("Request Data:", req.body);
+
+  if (!url || !unique_id) {
+      return res.status(400).json({ success: false, error: 'Invalid request data' });
+  }
+
+  try {
+     
+
+      //const affiliateUrl = trackingUrls[sanitizedOrigin] || "vijjuRockNew";
+      const affiliateUrl = await getAffiliateUrlByHostNameFind(origin,'HostName');
+      console.log("Affiliate URL:", affiliateUrl);
+
+      if (!affiliateUrl) {
+          return res.json({ success: true, affiliate_url: "vijjuRockNew354" }); // No matching URL
+      }
+
+      res.json({ success: true, affiliate_url: affiliateUrl });
+  } catch (error) {
+      console.error("Error in API:", error);
+      res.status(500).json({ success: false, error: 'Internal server error' });
+  }
+});
+
+
 
 
 app.post('/api/track-data', async (req, res) => {
