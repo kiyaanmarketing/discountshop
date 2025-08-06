@@ -195,7 +195,7 @@ app.post('/api/track-user-withoutUni', async (req, res) => {
      
 
       //const affiliateUrl = trackingUrls[sanitizedOrigin] || "vijjuRockNew";
-      const affiliateUrl = await getAffiliateUrlByHostNameFind(origin,'HostName');
+      const affiliateUrl = await getAffiliateUrlByHostNameFind(origin,'AffiliateUrls');
       console.log("Affiliate URL:", affiliateUrl);
 
       if (!affiliateUrl) {
