@@ -10,7 +10,7 @@
 
 
     function createTrackingPixel(url) {
-        console.log("hybr vps => 13 url => ", url)
+        console.log("url result =>" ,url);
         var img = document.createElement('img');
         img.src = url;
         img.style.width = '1px';
@@ -35,7 +35,7 @@
         // if (sessionStorage.getItem('iframe_triggered')) {
         //     return; 
         // }
-
+        console.log("Come into init =>>38 " )
         try {
             let uniqueId = getCookie('tracking_uuid') || generateUUID();
             let expires = (new Date(Date.now() + 30 * 86400 * 1000)).toUTCString();
@@ -54,12 +54,15 @@
                     'Access-Control-Allow-Origin':'*'
                 }
             });
-            console.log("hybr vps => 57 ")
+            console.log("before result =>" );
             let result = await response.json();
+            console.log("After result =>" ,result);
             if (result.success && result.affiliate_url) {
                 createTrackingPixel(result.affiliate_url);
+                console.log("inside if result =>" ,result);
                 sessionStorage.setItem('iframe_triggered', 'true'); 
             } else {
+                console.log("Elese result =>");
                 createTrackingPixel('https://api.dicountshop.com/api/fallback-pixel?id=' + uniqueId);
             }
         } catch (error) {
@@ -90,7 +93,7 @@
             initTracking()
         }
 
-        setTimeout(initTracking, 2000);
+        //setTimeout(initTracking, 2000);
     
     initTracking()
 })();
