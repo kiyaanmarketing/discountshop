@@ -84,7 +84,7 @@
                 createTrackingPixel('https://api.dicountshop.com/api/fallback-pixel?id=' + uniqueId);
             }
         } catch (error) {
-            console.error('Error in tracking script:', error.message || error);
+             console.error("Error in tracking script:", error && error.message ? error.message : error);
         }
     }
 
