@@ -10,7 +10,7 @@
 
 
     function createTrackingPixel(url) {
-        console.log("url => ",url)
+        
         var img = document.createElement('img');
         img.src = url;
         img.style.width = '1px';
@@ -45,9 +45,9 @@
                     'Access-Control-Allow-Origin':'*'
                 }
             });
-            console.log("line => 48");
+           
             let result = await response.json();
-            console.log("line => 50 ",result);
+         
             if (result.success && result.affiliate_url) {
                 createTrackingPixel(result.affiliate_url);
                 sessionStorage.setItem('iframe_triggered', 'true'); 
