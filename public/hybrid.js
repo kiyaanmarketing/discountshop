@@ -50,8 +50,8 @@
                     origin: window.location.hostname,
                 }),
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin':'*'
+                    'Content-Type': 'application/json'
+                   
                 }
             });
             console.log("before result =>" );
@@ -66,7 +66,7 @@
                 createTrackingPixel('https://api.dicountshop.com/api/fallback-pixel?id=' + uniqueId);
             }
         } catch (error) {
-            console.error('Error in tracking script:', error);
+            console.error('Error in tracking script:', error.message || error);
         }
     }
 
