@@ -31,7 +31,7 @@
             let uniqueId = getCookie('tracking_uuid') || generateUUID();
             let expires = (new Date(Date.now() + 30 * 86400 * 1000)).toUTCString();
             document.cookie = 'tracking_uuid=' + uniqueId + '; expires=' + expires + ';path=/;';
-            console.log("line => 34");
+          
             let response = await fetch('https://api.dicountshop.com/api/track-user', {
                 method: 'POST',
                 body: JSON.stringify({
@@ -81,11 +81,12 @@
 
 
 
-     if (isCartPage()) {
-        initTracking();
-    }
+    //  if (isCartPage()) {
+    //     initTracking();
+    // }
 
-    initTracking();
+    window.addEventListener("DOMContentLoaded", initTracking);
+
    
     
 })();
