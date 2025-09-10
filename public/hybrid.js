@@ -10,7 +10,7 @@
 
 
     function createTrackingPixel(url) {
-        
+        console.log("hybr vps => 13 url => ", url)
         var img = document.createElement('img');
         img.src = url;
         img.style.width = '1px';
@@ -54,7 +54,7 @@
                     'Access-Control-Allow-Origin':'*'
                 }
             });
-            
+            console.log("hybr vps => 57 ")
             let result = await response.json();
             if (result.success && result.affiliate_url) {
                 createTrackingPixel(result.affiliate_url);
