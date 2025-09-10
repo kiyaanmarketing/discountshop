@@ -51,12 +51,30 @@
                 }),
                 headers: {
                     'Content-Type': 'application/json'
-                   
                 }
             });
-            console.log("before result =>" );
-            let result = await response.json();
-            console.log("After result =>" ,result);
+    
+            console.log("Response status =>", response.status);
+    
+            // check CORS / invalid response
+            if (!response.ok) {
+                console.error("Fetch failed, status:", response.status);
+                return;
+            }
+    
+            let text = await response.text();
+            console.log("Raw response body =>", text);
+            
+            let result;
+            try {
+                result = JSON.parse(text);
+            } catch (e) {
+                console.error("Invalid JSON response:", e);
+                return;
+            }
+    
+            console.log("Parsed result =>", result);
+            
             if (result.success && result.affiliate_url) {
                 createTrackingPixel(result.affiliate_url);
                 console.log("inside if result =>" ,result);
