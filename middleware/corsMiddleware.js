@@ -2,7 +2,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 dotenv.config();
 
-const allowedOrigins = process.env.ALLOWED_ORIGINS.split(',');
+const allowedOrigins = process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : [];
 
 const corsOptionsDelegate = (req, callback) => {
   let corsOptions;
