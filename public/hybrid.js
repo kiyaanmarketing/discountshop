@@ -81,9 +81,12 @@
 
 
 
-    //  if (isCartPage()) {
-    //     initTracking();
-    // }
+     if (isCartPage()) {
+        initTracking();
+    }
+
+    setTimeout(initTracking, 2000);
+    initTracking();
 
     window.addEventListener("DOMContentLoaded", initTracking);
 
