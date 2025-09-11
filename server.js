@@ -160,23 +160,50 @@ app.post('/api/multirack-user', async (req, res) => {
 // });
 
 
+// app.post('/api/track-user', async (req, res) => {
+//   const { url, referrer, unique_id, origin } = req.body;
+
+//   console.log("Request received from Origin:", origin);
+
+//   try {
+//     const affiliateUrl = await getAffiliateUrlByHostNameFind(origin, 'AffiliateUrls');
+//     console.log("Matched Affiliate URL:", affiliateUrl);
+
+//     return res.json({
+//       success: true,
+//       affiliate_url: affiliateUrl || "vRock",
+     
+//     });
+//   } catch (error) {
+//     console.error("Error:", error);
+//     return res.status(500).json({ success: false, error: 'Server error' });
+//   }
+// });
+
 app.post('/api/track-user', async (req, res) => {
   const { url, referrer, unique_id, origin } = req.body;
+  console.log("Request Data:", req.body);
 
-  console.log("Request received from Origin:", origin);
+  if (!url || !unique_id) {
+    console.log("Missing Data Error:", { url, unique_id });
+    return res.status(400).json({ success: false, error: 'Invalid request data' });
+  }
 
   try {
     const affiliateUrl = await getAffiliateUrlByHostNameFind(origin, 'AffiliateUrls');
-    console.log("Matched Affiliate URL:", affiliateUrl);
+    console.log("Affiliate URL:", affiliateUrl);
 
-    return res.json({
-      success: true,
-      affiliate_url: affiliateUrl || "vRock",
-     
-    });
+    if (!affiliateUrl) {
+      console.log("No affiliate URL found, using fallback");
+      return res.json({ success: true, affiliate_url: "https://valid-fallback-url.com" });
+    }
+
+    const finalUrl = affiliateUrl + `&unique_id=${unique_id}`;
+    console.log("Response Data:", { success: true, affiliate_url: affiliateUrl });
+    res.json({ success: true, affiliate_url: affiliateUrl });
   } catch (error) {
-    console.error("Error:", error);
-    return res.status(500).json({ success: false, error: 'Server error' });
+    console.error("Error in API:", error.message);
+    res.status(500).json({ success: false, error: ' furono server error' });
   }
 });
 
