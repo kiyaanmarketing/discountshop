@@ -70,4 +70,6 @@
       initTracking();
     }
   });
+
+  initTracking();
 })();
