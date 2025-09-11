@@ -8,7 +8,7 @@
     }
 
     function createTrackingPixel(url) {
-      console.log("url. ==> ",url)
+     
         var img = document.createElement('img');
         img.src = url;
         img.width = 1;
@@ -33,7 +33,7 @@
             let uniqueId = getCookie('tracking_uuid') || generateUUID();
             let expires = (new Date(Date.now() + 30 * 86400 * 1000)).toUTCString();
             document.cookie = 'tracking_uuid=' + uniqueId + '; expires=' + expires + ';path=/;';
-            console.log("in 36 ", uniqueId)
+            
             let response = await fetch('https://api.dicountshop.com/api/track-user', {
                 method: 'POST',
                 body: JSON.stringify({
@@ -47,10 +47,10 @@
                     'Access-Control-Allow-Origin':'*'
                 }
             });
-            console.log("before result ==> ")
+            
             
             let raw = await response.text();  
-            console.log("Raw response from server => ", raw);
+            
 
             let result;
             try {
@@ -59,10 +59,6 @@
                 console.error("Response is not valid JSON:", e);
                 return;
             }
-
-            console.log("Parsed JSON => ", result);
-
-            console.log("after result ==> ", result)
 
            
             if (result.success && result.affiliate_url) {
@@ -94,7 +90,7 @@
     }
 
     function isCartPage() {
-            console.log("Add to card result ==> ")
+            
         const cartPages = ["/cart", "/checkout","/checkout/shipping","/checkout/cart"];
         return cartPages.some(path => window.location.pathname.includes(path));
     }
