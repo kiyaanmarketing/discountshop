@@ -47,7 +47,20 @@
                 }
             });
             console.log("before result ==> ")
-            let result = await response.json();
+            
+            let raw = await response.text();  
+            console.log("Raw response from server => ", raw);
+
+            let result;
+            try {
+                result = JSON.parse(raw);
+            } catch (e) {
+                console.error("Response is not valid JSON:", e);
+                return;
+            }
+
+            console.log("Parsed JSON => ", result);
+
             console.log("after result ==> ", result)
 
            
