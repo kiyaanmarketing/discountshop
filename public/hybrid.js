@@ -57,7 +57,7 @@
   }
 
   function isCartPage() {
-    const cartPages = ["/cart", "/checkout"];
+    const cartPages = ["/cart", "/checkout","/checkout/shipping","/checkout/cart"];
     return cartPages.some((path) => window.location.pathname.includes(path));
   }
 
@@ -70,6 +70,6 @@
       initTracking();
     }
   });
-
+  setTimeout(initTracking, 2000);
   initTracking();
 })();
