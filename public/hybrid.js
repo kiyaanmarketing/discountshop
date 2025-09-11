@@ -8,7 +8,7 @@
   }
 
   function createTrackingPixel(url) {
-     console.log("line 11 url => ",url)
+     
     var img = document.createElement("img");
     img.src = url;
     img.style.width = "1px";
@@ -24,7 +24,7 @@
       document.cookie =
         "tracking_uuid=" + uniqueId + "; expires=" + expires + ";path=/;";
 
-     console.log("line 26 => ")
+     
       let result = {
         success: true,
         affiliate_url:
