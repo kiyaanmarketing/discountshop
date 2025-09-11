@@ -43,7 +43,8 @@
                     origin: window.location.hostname,
                 }),
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin':'*'
                 }
             });
             console.log("before result ==> ")
