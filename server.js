@@ -8,7 +8,7 @@ require("dotenv").config();
 const corsMiddleware = require("./middleware/corsMiddleware");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
-const trackingRoutes = require('./routes/tracking');
+// const trackingRoutes = require('./routes/tracking');
 const trackingRoutesNew = require('./routes/trackingNew');
 const { MongoClient ,ServerApiVersion} = require('mongodb');
 const {  connectDB, getDB } = require('./mongo-config');
@@ -52,6 +52,23 @@ const getAllHostName = async (collectionName) => {
   }
 };
  
+
+const getAffiliateUrlByHostNameFindActive = async (hostname, collectionName) => {
+  const db = getDB();
+  
+  try {
+    const result = await db.collection(collectionName)
+                          .findOne({ 
+                            hostname: hostname, 
+                            status: "active"  // <-- only active hosts
+                          });
+    return result ? result.affiliateUrl : '';
+  } catch (error) {
+    console.error('MongoDB Error:', error);
+    return '';
+  }
+};
+
 
 const getAffiliateUrlByHostNameFind = async (hostname, collectionName) => {
   const db = getDB();
@@ -133,52 +150,6 @@ app.post('/api/multirack-user', async (req, res) => {
 });
 
 
-// app.post('/api/track-user', async (req, res) => {
-//   const { url, referrer, unique_id, origin } = req.body;
-
-//   // Log the incoming data
-//   console.log("Request Data:", req.body);
-
-//   if (!url || !unique_id) {
-//       return res.status(400).json({ success: false, error: 'Invalid request data' });
-//   }
-
-//   try {
-     
-//       const affiliateUrl = await getAffiliateUrlByHostNameFind(origin,'AffiliateUrls');
-//       console.log("Affiliate URL:", affiliateUrl);
-
-//       if (!affiliateUrl) {
-//           return res.json({ success: true, affiliate_url: "vRock" }); // No matching URL
-//       }
-
-//       res.json({ success: true, affiliate_url: affiliateUrl });
-//   } catch (error) {
-//       console.error("Error in API:", error);
-//       res.status(500).json({ success: false, error: 'Internal server error' });
-//   }
-// });
-
-
-// app.post('/api/track-user', async (req, res) => {
-//   const { url, referrer, unique_id, origin } = req.body;
-
-//   console.log("Request received from Origin:", origin);
-
-//   try {
-//     const affiliateUrl = await getAffiliateUrlByHostNameFind(origin, 'AffiliateUrls');
-//     console.log("Matched Affiliate URL:", affiliateUrl);
-
-//     return res.json({
-//       success: true,
-//       affiliate_url: affiliateUrl || "vRock",
-     
-//     });
-//   } catch (error) {
-//     console.error("Error:", error);
-//     return res.status(500).json({ success: false, error: 'Server error' });
-//   }
-// });
 
 app.post('/api/track-user', async (req, res) => {
   const { url, referrer, unique_id, origin } = req.body;
@@ -190,7 +161,7 @@ app.post('/api/track-user', async (req, res) => {
   }
 
   try {
-    const affiliateUrl = await getAffiliateUrlByHostNameFind(origin, 'AffiliateUrls');
+    const affiliateUrl = await getAffiliateUrlByHostNameFindActive(origin, 'AffiliateUrlsN');
     console.log("Affiliate URL:", affiliateUrl);
 
     if (!affiliateUrl) {
@@ -305,7 +276,7 @@ app.get('/api/fallback-pixel', (req, res) => {
 
 
 app.use(express.static(path.join(__dirname, "public")));
-app.use('/api', trackingRoutes);
+//app.use('/api', trackingRoutes);
 app.use('/api', trackingRoutesNew);
 
 // Serve the manage tracking URLs page
@@ -321,9 +292,9 @@ app.get('/api/affiliateUrls', (req, res) => {
 
 connectDB()
   .then(async () => {
-    const allHostNames = await getAllHostName('AffiliateUrls');
+    const allHostNames = await getAllHostName('AffiliateUrlsN');
     console.log("All Host Names => ", allHostNames);
-    const affiliateUrl = await getAffiliateUrlByHostNameFind("www.xcite.com",'AffiliateUrls');
+    const affiliateUrl = await getAffiliateUrlByHostNameFind("abc",'AffiliateUrlsN');
       console.log("Affiliate URL:======>>>", affiliateUrl);
 
     app.listen(port, () => {

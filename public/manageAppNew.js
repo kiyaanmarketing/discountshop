@@ -1,123 +1,111 @@
-
-
-
 const apiUrl = '/api';
-
 let editHostname = '';
 
 async function fetchTrackingUrls() {
   try {
-    
-    const response = await fetch(`${apiUrl}/tracking-urls_new`);
-    
-
-    if (!response.ok) throw new Error(`Fetch failed with status ${response.status}`);
+    const response = await fetch(`${apiUrl}/tracking-urls`);
+    if (!response.ok) throw new Error(`Fetch failed with status=> ${response.status}`);
 
     const data = await response.json();
-   
-
-    const tableBody = document.querySelector('#urls-table-new tbody');
+    const tableBody = document.querySelector('#urls-table tbody');
     tableBody.innerHTML = '';
 
-    data.forEach(({ hostname, affiliateUrl }) => {
-      
-      //console.log("affiliateUrl 121 => ", affiliateUrl.S)
+    data.forEach(({ hostname, affiliateUrl, status }) => {
       const row = document.createElement('tr');
-        row.innerHTML = `
-         <td>${hostname}</td>
-    <td>${affiliateUrl}</td>
-    <td class="actions">
-      <button class="edit" onclick="openEditModal('${hostname}', '${affiliateUrl}')">Edit</button>
-      <button class="delete" onclick="deleteUrl('${hostname}')">Delete</button>
-    </td>
-  `;
+      row.innerHTML = `
+        <td>${hostname}</td>
+        <td>${affiliateUrl}</td>
+        <td>
+          <button class="toggle" onclick="toggleStatus('${hostname}', '${status}')">
+            ${status === 'active' ? '✅ Active' : '❌ Inactive'}
+          </button>
+        </td>
+        <td class="actions">
+          <button onclick="openEditModal('${hostname}', '${affiliateUrl}', '${status}')">Edit</button>
+          <button class="delete" onclick="deleteUrl('${hostname}')">Delete</button>
+        </td>
+      `;
       tableBody.appendChild(row);
     });
   } catch (error) {
     console.error("Fetch Error:", error);
-    alert('Error fetching tracking URLs. => 129');
+    alert('Error fetching tracking URLs vhl.');
   }
 }
 
-
-
-
-document.getElementById('submit-btn-new').addEventListener('click', async () => {
-  const hostname = document.getElementById('hostname-new').value.trim();
-  const affiliateUrl = document.getElementById('affiliateUrl-new').value.trim();
+// Add URL
+document.getElementById('submit-btn').addEventListener('click', async () => {
+  const hostname = document.getElementById('hostname').value.trim();
+  const affiliateUrl = document.getElementById('affiliateUrl').value.trim();
+  const status = document.getElementById('status').value;
 
   if (!hostname || !affiliateUrl) {
-    alert('Please fill both hostname and URL.');
+    alert('Please fill all fields.');
     return;
   }
 
   try {
-    const response = await fetch(`${apiUrl}/add-url-new`, {
+    const response = await fetch(`${apiUrl}/add-url`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ hostname, affiliateUrl }),
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ hostname, affiliateUrl, status }),
     });
 
     const data = await response.json();
     alert(data.message);
     fetchTrackingUrls();
-    document.getElementById('hostname-new').value = '';
-    document.getElementById('affiliateUrl-new').value = '';
+    document.getElementById('hostname').value = '';
+    document.getElementById('affiliateUrl').value = '';
   } catch (error) {
     console.error(error);
     alert('Error adding URL.');
   }
 });
 
-function openEditModal(hostname, affiliateUrl) {
-  
+// Edit Modal
+function openEditModal(hostname, affiliateUrl, status) {
   editHostname = hostname;
-  document.getElementById('edit-hostname-new').value = hostname;
-  document.getElementById('edit-url-new').value = affiliateUrl;
-  document.getElementById('editModal-new').style.display = 'flex';
+  document.getElementById('edit-hostname').value = hostname;
+  document.getElementById('edit-url').value = affiliateUrl;
+  document.getElementById('edit-status').value = status;
+  document.getElementById('editModal').style.display = 'flex';
 }
 
 document.querySelector('.close').addEventListener('click', () => {
-  document.getElementById('editModal-new').style.display = 'none';
+  document.getElementById('editModal').style.display = 'none';
 });
 
-document.getElementById('edit-submit-btn-new').addEventListener('click', async () => {
-  const newHostname = document.getElementById('edit-hostname-new').value.trim();
-  const newUrl = document.getElementById('edit-url-new').value.trim();
+document.getElementById('edit-submit-btn').addEventListener('click', async () => {
+  const newUrl = document.getElementById('edit-url').value.trim();
+  const newStatus = document.getElementById('edit-status').value;
 
-  if (!newHostname || !newUrl) {
-    alert('Please enter both hostname and URL.');
+  if (!newUrl) {
+    alert('Please enter Affiliate URL.');
     return;
   }
 
   try {
-    const response = await fetch(`${apiUrl}/edit-url-new`, {
+    const response = await fetch(`${apiUrl}/edit-url`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ editHostname, newHostname, newUrl }),
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ hostname: editHostname, newUrl, newStatus }),
     });
 
     const data = await response.json();
     alert(data.message);
     fetchTrackingUrls();
-    document.getElementById('editModal-new').style.display = 'none';
+    document.getElementById('editModal').style.display = 'none';
   } catch (error) {
     console.error(error);
-    alert('Error editing URL. 207');
+    alert('Error editing URL.');
   }
 });
 
+// Delete
 async function deleteUrl(hostname) {
   if (confirm(`Are you sure you want to delete the URL for ${hostname}?`)) {
     try {
-      const response = await fetch(`${apiUrl}/delete-url-new/${hostname}`, {
-        method: 'DELETE',
-      });
-
+      const response = await fetch(`${apiUrl}/delete-url/${hostname}`, { method: 'DELETE' });
       const data = await response.json();
       alert(data.message);
       fetchTrackingUrls();
@@ -125,6 +113,25 @@ async function deleteUrl(hostname) {
       console.error(error);
       alert('Error deleting URL.');
     }
+  }
+}
+
+// Toggle Status
+async function toggleStatus(hostname, currentStatus) {
+  const newStatus = currentStatus === 'active' ? 'inactive' : 'active';
+  try {
+    const response = await fetch(`${apiUrl}/toggle-status`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ hostname, newStatus }),
+    });
+
+    const data = await response.json();
+    alert(data.message);
+    fetchTrackingUrls();
+  } catch (error) {
+    console.error(error);
+    alert('Error toggling status.');
   }
 }
 

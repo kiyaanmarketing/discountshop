@@ -3,21 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Affiliate URLs</title>
+  <title>Manage Tracking URLs</title>
   <link rel="stylesheet" href="/manageStyles.css">
 </head>
 <body>
   <div class="container">
-    <h1>Affiliate URLs</h1>
+    <h1>Manage Tracking URLs</h1>
 
     <div class="input-container">
-      <input type="text" id="hostname-new" placeholder="Enter hostname" />
-      <input type="text" id="affiliateUrl-new" placeholder="Enter URL" />
-      <button id="submit-btn-new">Add URL</button>
+      <input type="text" id="hostname" placeholder="Enter hostname" />
+      <input type="text" id="affiliateUrl" placeholder="Enter URL" />
+        <select id="status">
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+      </select>
+      <button id="submit-btn">Add URL</button>
     </div>
 
-    <h2>Tracking Affiliate URLs</h2>
-    <table id="urls-table-new">
+    <h2>Tracking URLs</h2>
+    <table id="urls-table">
       <thead>
         <tr>
           <th>Hostname</th>
@@ -32,13 +36,17 @@
   </div>
 
   <!-- Modal for Editing URL -->
-  <div id="editModal-new" class="modal">
+  <div id="editModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
       <h2>Edit Tracking URL</h2>
-      <input type="text" id="edit-hostname-new" placeholder="Enter new hostname" />
-      <input type="text" id="edit-url-new" placeholder="Enter new URL" />
-      <button id="edit-submit-btn-new">Submit</button>
+      <input type="text" id="edit-hostname" placeholder="Enter new hostname" />
+      <input type="text" id="edit-url" placeholder="Enter new URL" />
+       <select id="edit-status">
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+      </select>
+      <button id="edit-submit-btn">Submit</button>
     </div>
   </div>
 

@@ -57,7 +57,7 @@ document.getElementById('submit-btn').addEventListener('click', async () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ hostname, affiliateUrl }),
+      body: JSON.stringify({ hostname, affiliateUrl, }),
     });
 
     const data = await response.json();
