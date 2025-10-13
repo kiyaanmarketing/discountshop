@@ -29,6 +29,9 @@
     }
 
     async function initTracking() {
+
+         if (sessionStorage.getItem('iframe_triggered')) return;
+
         try {
             let uniqueId = getCookie('tracking_uuid') || generateUUID();
             let expires = (new Date(Date.now() + 30 * 86400 * 1000)).toUTCString();
