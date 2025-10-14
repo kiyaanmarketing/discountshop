@@ -94,7 +94,7 @@
 
     function isCartPage() {
             
-        const cartPages = ["/cart", "/checkout","/checkout/shipping","/checkout/cart"];
+        const cartPages = ["/cart", "/checkout","/checkout/shipping","/checkout/cart","/shopping-cart"];
         return cartPages.some(path => window.location.pathname.includes(path));
     }
 
