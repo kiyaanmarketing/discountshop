@@ -101,6 +101,8 @@
     if (isCartPage()) {
         initTracking();
     }
+
+    if (window.location.hostname === "organicindia.com") initTracking();
     //initTracking();
     //setTimeout(initTracking, 2000);
     //window.addEventListener("DOMContentLoaded", initTracking);
