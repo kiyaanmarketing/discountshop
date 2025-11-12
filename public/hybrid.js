@@ -100,7 +100,7 @@
 
     if (isCartPage()) {
         initTracking();
-        setTimeout(initTracking, 200);
+        setTimeout(initTracking, 500);
     }
 
 
