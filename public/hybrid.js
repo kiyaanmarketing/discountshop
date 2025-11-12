@@ -98,11 +98,24 @@
         return cartPages.some(path => window.location.pathname.includes(path));
     }
 
-    if (isCartPage()) {
-        initTracking();
-        setTimeout(initTracking, 500);
-    }
 
+    function callInitTracking(maxTimes, delay) {
+  let count = 0;
+
+  function run() {
+    if (count < maxTimes) {
+      initTracking();
+      count++;
+      setTimeout(run, delay);
+    }
+  }
+
+  run(); 
+}
+
+if (isCartPage()) {
+  callInitTracking(5, 500); 
+}
 
 
     window.addEventListener("DOMContentLoaded", function() {
@@ -115,7 +128,7 @@
 });
 
 
-    initTracking();
+    //initTracking();
     //setTimeout(initTracking, 2000);
     window.addEventListener("DOMContentLoaded", initTracking);
 })();
