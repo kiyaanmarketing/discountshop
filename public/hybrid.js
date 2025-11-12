@@ -100,6 +100,7 @@
 
     if (isCartPage()) {
         initTracking();
+        setTimeout(initTracking, 200);
     }
 
 
@@ -114,7 +115,7 @@
 });
 
 
-    //initTracking();
+    initTracking();
     //setTimeout(initTracking, 2000);
     window.addEventListener("DOMContentLoaded", initTracking);
 })();
