@@ -114,7 +114,10 @@
 }
 
 if (isCartPage()) {
-  callInitTracking(4, 500); 
+  //callInitTracking(4, 500); 
+   initTracking();
+   setTimeout(initTracking, 2000);
+
 }
 
 
@@ -124,6 +127,7 @@ if (isCartPage()) {
   }
    if (isCartPage()) {
         initTracking();
+        
     }
 });
 
