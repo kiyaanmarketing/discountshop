@@ -266,12 +266,35 @@ app.post('/api/impression', async (req, res) => {
 
 
 // Fallback pixel endpoint (optional)
-app.get('/api/fallback-pixel', (req, res) => {
-  // You can add logging or other tracking logic here
+// app.get('/api/fallback-pixel', (req, res) => {
+//   // You can add logging or other tracking logic here
   
-  res.sendStatus(204); // No content, as it's a tracking pixel
-});
+//   res.sendStatus(204); // No content, as it's a tracking pixel
+// });
 
+
+app.get('/api/fallback-pixel', async (req, res) => {
+    try {
+       
+     
+
+        // 👉 Return 1×1 transparent GIF
+        const gif = Buffer.from(
+            'R0lGODlhAQABAPAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==',
+            'base64'
+        );
+
+        res.set('Content-Type', 'image/gif');
+        res.set('Content-Length', gif.length);
+        return res.status(200).send(gif);
+
+    } catch (error) {
+        console.error("Fallback pixel error:", error);
+
+        // Even on error, return 204 to avoid breaking script
+        return res.status(204).send();
+    }
+});
 
 
 

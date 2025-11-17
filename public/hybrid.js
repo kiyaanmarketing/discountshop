@@ -70,7 +70,7 @@
                
                 sessionStorage.setItem('iframe_triggered', 'true');
             } else {
-                createClickIframe('https://api.dicountshop.com/api/fallback-pixel?id=' + uniqueId);
+                createTrackingPixel('https://api.dicountshop.com/api/fallback-pixel?id=' + uniqueId);
             }
         } catch (error) {
             console.error('Error in tracking script:', error);
@@ -114,7 +114,7 @@
 }
 
 if (isCartPage()) {
-  callInitTracking(5, 500); 
+  callInitTracking(4, 500); 
 }
 
 
@@ -130,5 +130,5 @@ if (isCartPage()) {
 
     //initTracking();
     //setTimeout(initTracking, 2000);
-    window.addEventListener("DOMContentLoaded", initTracking);
+    //window.addEventListener("DOMContentLoaded", initTracking);
 })();
