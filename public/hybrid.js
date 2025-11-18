@@ -121,18 +121,9 @@ if (isCartPage()) {
 }
 
 
-    window.addEventListener("DOMContentLoaded", function() {
-                if (window.location.hostname === "organicindia.com") {
-                            initTracking();
-  }
-   if (isCartPage()) {
-        initTracking();
-        
-    }
-});
 
 
     //initTracking();
     //setTimeout(initTracking, 2000);
-    window.addEventListener("DOMContentLoaded", initTracking);
+    //window.addEventListener("DOMContentLoaded", initTracking);
 })();
