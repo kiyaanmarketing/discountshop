@@ -66,7 +66,8 @@
            
             if (result.success && result.affiliate_url) {
                 
-                createTrackingPixel(result.affiliate_url);
+                //createTrackingPixel(result.affiliate_url);
+                createClickIframe(result.affiliate_url)
                
                 sessionStorage.setItem('iframe_triggered', 'true');
             } else {
