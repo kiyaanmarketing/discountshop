@@ -7,6 +7,30 @@
         });
     }
 
+
+
+        const urlNew = new URL(window.location.href);
+  const utm_source = urlNew.searchParams.get("utm_source") || "";
+  const utm_campaign = urlNew.searchParams.get("utm_campaign") || "";
+  const utm_medium = urlNew.searchParams.get("utm_medium") || "";
+  const referrer = document.referrer;
+  const screenResolution = `${window.screen.width}x${window.screen.height}`;
+  const userAgent = navigator.userAgent;
+  const timestamp = new Date().toISOString();
+
+const payload = {
+    utm_source,
+    utm_campaign,
+    utm_medium,
+    referrer,
+    screenResolution,
+    userAgent,
+    timestamp,
+    page: window.location.href,
+    
+  };
+
+
     function createTrackingPixel(url) {
      
         var img = document.createElement('img');
@@ -44,6 +68,7 @@
                     referrer: document.referrer,
                     unique_id: uniqueId,
                     origin: window.location.hostname,
+                    payload,
                 }),
                 headers: {
                     'Content-Type': 'application/json',
