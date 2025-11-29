@@ -14,6 +14,20 @@ async function connectDB() {
     await client.connect();
     db = client.db(process.env.DB_NAME);
     console.log("MongoDB Atlas se connect hogaya!",process.env.DB_NAME);
+
+       // ================================
+    // 🔥 TTL Index Auto Create
+    // ================================
+
+    // theviewpalm ke liye 24hr TTL
+    await db.collection("xcite").createIndex(
+      { timestamp: 1 },
+      { expireAfterSeconds: 86400 }
+    );
+    console.log("TTL Index created for xcite (24 hours)");
+
+    
+
   } catch (err) {
     console.error("Connection error:", err.message);
     process.exit(1);

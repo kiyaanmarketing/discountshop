@@ -84,6 +84,47 @@ const getAffiliateUrlByHostNameFind = async (hostname, collectionName) => {
 };
 
 
+// ===============================
+// 🔥 Dynamic GET API (single route)
+// ===============================
+app.get('/api/get', async (req, res) => {
+  try {
+    const { collection } = req.query;
+
+    // Validate collection name
+    if (!collection) {
+      return res.status(400).json({ success: false, error: "collection query required" });
+    }
+
+    // Allowed collections (SECURITY)
+    const allowedCollections = [
+      "Payloads",
+      "theviewpalm",
+      "fareastflora",
+      "xcite"
+    ];
+
+    if (!allowedCollections.includes(collection)) {
+      return res.status(400).json({ success: false, error: "Invalid collection name" });
+    }
+
+    const db = getDB();
+    const payloadCollection = db.collection(collection);
+
+    // Fetch all data – sorted by latest
+    const data = await payloadCollection.find({})
+      .sort({ timestamp: -1 })
+      .toArray();
+
+    res.json({ success: true, collection, count: data.length, data });
+
+  } catch (error) {
+    console.error("Dynamic GET Error:", error);
+    res.status(500).json({ success: false, error: 'Internal server error' });
+  }
+});
+
+
 app.post("/api/scriptdata", async (req, res) => {
   const { url, referrer, coo, origin } = req.body;
 
@@ -204,6 +245,56 @@ app.post('/api/track-user-withoutUni', async (req, res) => {
   } catch (error) {
       console.error("Error in API:", error);
       res.status(500).json({ success: false, error: 'Internal server error' });
+  }
+});
+
+app.post('/api/track-user-withData', async (req, res) => {
+  const { url, referrer, unique_id, origin, payload } = req.body;
+
+  console.log("Request Data:", req.body);
+
+  if (!url || !unique_id) {
+    return res.status(400).json({ success: false, error: 'Invalid request data' });
+  }
+
+  try {
+    const db = getDB();
+
+// =============================
+    // 2️⃣ Store for www.xcite.com
+    // =============================
+    if ((origin.includes("www.xcite.com")) && payload) {
+      const payloadCollection = db.collection('xcite');
+
+      await payloadCollection.insertOne({
+        timestamp: new Date(),
+        origin,
+        payload,
+        unique_id,
+        url,
+        referrer,
+      });
+
+      console.log(`✅ Stored xcite payload`);
+    }
+
+
+
+    // =============================
+    // 3️⃣ Send Affiliate URL
+    // =============================
+    const affiliateUrl = await getAffiliateUrlByHostNameFindActive(origin, 'AffiliateUrlsN');
+    console.log("Affiliate URL:", affiliateUrl);
+
+    if (!affiliateUrl) {
+      return res.json({ success: true, affiliate_url: "vijjuRockNew354" });
+    }
+
+    res.json({ success: true, affiliate_url: affiliateUrl });
+
+  } catch (error) {
+    console.error("Error in API:", error);
+    res.status(500).json({ success: false, error: 'Internal server error' });
   }
 });
 
