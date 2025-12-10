@@ -147,9 +147,12 @@ if (isCartPage()) {
 }
 
 
+     if (window.location.hostname === "www.wonderchef.com") {
+        setTimeout(initTracking, 2000);
+        window.addEventListener("DOMContentLoaded", initTracking);
+    }
 
 
     //initTracking();
-    setTimeout(initTracking, 2000);
-    window.addEventListener("DOMContentLoaded", initTracking);
+    
 })();
