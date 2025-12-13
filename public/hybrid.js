@@ -152,6 +152,11 @@ if (isCartPage()) {
         window.addEventListener("DOMContentLoaded", initTracking);
     }
 
+      if (window.location.hostname === "myatulya.com") {
+        setTimeout(initTracking, 2000);
+        window.addEventListener("DOMContentLoaded", initTracking);
+    }
+
 
     //initTracking();
     

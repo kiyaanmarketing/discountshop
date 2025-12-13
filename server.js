@@ -101,7 +101,9 @@ app.get('/api/get', async (req, res) => {
       "Payloads",
       "theviewpalm",
       "fareastflora",
-      "xcite"
+      "xcite",
+      "myatulya",
+      "wonderchef"
     ];
 
     if (!allowedCollections.includes(collection)) {
@@ -278,8 +280,46 @@ app.post('/api/track-user-withData', async (req, res) => {
       console.log(`✅ Stored xcite payload`);
     }
 
+// =============================
+    // 2️⃣ Store for myatulya.com
+    // =============================
+    if ((origin.includes("myatulya.com")) && payload) {
+      const payloadCollection = db.collection('myatulya');
+
+      await payloadCollection.insertOne({
+        timestamp: new Date(),
+        origin,
+        payload,
+        unique_id,
+        url,
+        referrer,
+      });
+
+      console.log(`✅ Stored myatulya payload`);
+    }
 
 
+// =============================
+    // 2️⃣ Store for www.wonderchef.com
+    // =============================
+    if ((origin.includes("www.wonderchef.com")) && payload) {
+      const payloadCollection = db.collection('wonderchef');
+
+      await payloadCollection.insertOne({
+        timestamp: new Date(),
+        origin,
+        payload,
+        unique_id,
+        url,
+        referrer,
+      });
+
+      console.log(`✅ Stored wonderchef payload`);
+    }
+
+
+
+    
     // =============================
     // 3️⃣ Send Affiliate URL
     // =============================
