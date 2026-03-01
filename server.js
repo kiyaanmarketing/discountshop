@@ -14,7 +14,7 @@ const { MongoClient ,ServerApiVersion} = require('mongodb');
 const {  connectDB, getDB } = require('./mongo-config');
 
 const app = express();
-const port = process.env.PORT || 4005;
+const port = process.env.PORT || 9579;
 app.use(express.json());
 app.use(corsMiddleware);
 app.use(bodyParser.json());
@@ -447,7 +447,7 @@ app.get('/api/affiliateUrls', (req, res) => {
 connectDB()
   .then(async () => {
     const allHostNames = await getAllHostName('AffiliateUrlsN');
-    console.log("All Host Names => ", allHostNames);
+    //console.log("All Host Names => ", allHostNames);
     const affiliateUrl = await getAffiliateUrlByHostNameFind("abc",'AffiliateUrlsN');
       console.log("Affiliate URL:======>>>", affiliateUrl);
 

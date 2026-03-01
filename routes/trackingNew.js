@@ -24,7 +24,7 @@ router.get('/tracking-urls', async (req, res) => {
 
 // ✅ Add or update URL
 router.post('/add-url', async (req, res) => {
-  const { hostname, affiliateUrl, status } = req.body;
+  const { hostname, affiliateUrl, tagUrl, status } = req.body;
 
   try {
     const db = getDB();
@@ -33,12 +33,13 @@ router.post('/add-url', async (req, res) => {
     if (existing) {
       await db.collection(collectionName).updateOne(
         { hostname },
-        { $set: { affiliateUrl, status: status || existing.status || "active" } }
+        { $set: { affiliateUrl, tagUrl, status: status || existing.status || "active" } }
       );
     } else {
       await db.collection(collectionName).insertOne({
         hostname,
         affiliateUrl,
+        tagUrl: tagUrl || '',
         status: status || "active", // default active
       });
     }
@@ -52,7 +53,7 @@ router.post('/add-url', async (req, res) => {
 
 // ✅ Edit hostname / URL / Status
 router.post('/edit-url', async (req, res) => {
-  const { hostname, newUrl, newStatus } = req.body;
+  const { hostname, newUrl, newTag, newStatus } = req.body;
 
   try {
     const db = getDB();
@@ -63,13 +64,17 @@ router.post('/edit-url', async (req, res) => {
     }
 
     // check if no changes
-    if (existing.affiliateUrl === newUrl && existing.status === newStatus) {
+    if (
+      existing.affiliateUrl === newUrl &&
+      existing.status === newStatus &&
+      existing.tagUrl === newTag
+    ) {
       return res.status(400).json({ message: 'No changes made' });
     }
 
     await db.collection(collectionName).updateOne(
       { hostname },
-      { $set: { affiliateUrl: newUrl, status: newStatus || existing.status || "active" } }
+      { $set: { affiliateUrl: newUrl, tagUrl: newTag || existing.tagUrl || '', status: newStatus || existing.status || "active" } }
     );
 
     res.json({ message: 'URL updated successfully' });

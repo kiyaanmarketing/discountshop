@@ -5,27 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manage Tracking URLs</title>
   <link rel="stylesheet" href="/manageStyles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- include Bootstrap for base styling -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-..." crossorigin="anonymous">
 </head>
 <body>
+  <header class="page-header">
+    <div class="container">
+      <h1><i class="fas fa-link"></i> Manage Tracking URLs</h1>
+    </div>
+  </header>
   <div class="container">
-    <h1>Manage Tracking URLs</h1>
+    <div id="toast" class="toast"></div>
 
     <div class="input-container">
-      <input type="text" id="hostname" placeholder="Enter hostname" />
-      <input type="text" id="affiliateUrl" placeholder="Enter URL" />
-        <select id="status">
+      <div class="input-with-icon">
+        <i class="fas fa-globe"></i>
+        <input type="text" id="hostname" class="form-control" placeholder="Enter hostname" />
+      </div>
+      <div class="input-with-icon">
+        <i class="fas fa-link"></i>
+        <input type="text" id="affiliateUrl" class="form-control" placeholder="Enter URL" />
+      </div>
+      <div class="input-with-icon">
+        <i class="fas fa-tag"></i>
+        <input type="text" id="tagUrl" class="form-control" placeholder="Enter Tag URL" />
+      </div>
+      <select id="status" class="form-select">
         <option value="active">Active</option>
         <option value="inactive">Inactive</option>
       </select>
-      <button id="submit-btn">Add URL</button>
+      <button id="submit-btn" class="btn"><i class="fas fa-plus-circle"></i> Add URL</button>
     </div>
 
     <h2>Tracking URLs</h2>
-    <table id="urls-table">
+    <div class="table-wrapper">
+    <table id="urls-table" class="table table-striped table-hover">
       <thead>
         <tr>
           <th>Hostname</th>
           <th>URL</th>
+          <th>Tag URL</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -33,6 +53,7 @@
         <!-- Rows will be dynamically added here -->
       </tbody>
     </table>
+    </div>
   </div>
 
   <!-- Modal for Editing URL -->
@@ -40,9 +61,19 @@
     <div class="modal-content">
       <span class="close">&times;</span>
       <h2>Edit Tracking URL</h2>
-      <input type="text" id="edit-hostname" placeholder="Enter new hostname" />
-      <input type="text" id="edit-url" placeholder="Enter new URL" />
-       <select id="edit-status">
+      <div class="input-with-icon">
+        <i class="fas fa-globe"></i>
+        <input type="text" id="edit-hostname" class="form-control" placeholder="Enter new hostname" />
+      </div>
+      <div class="input-with-icon">
+        <i class="fas fa-link"></i>
+        <input type="text" id="edit-url" class="form-control" placeholder="Enter new URL" />
+      </div>
+      <div class="input-with-icon">
+        <i class="fas fa-tag"></i>
+        <input type="text" id="edit-tag" class="form-control" placeholder="Enter new Tag URL" />
+      </div>
+      <select id="edit-status" class="form-select">
         <option value="active">Active</option>
         <option value="inactive">Inactive</option>
       </select>
