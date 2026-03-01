@@ -115,8 +115,12 @@ h1, h2 {
 .input-with-icon input {
   padding-left: 52px; /* more space so icon never overlaps placeholder */
 }
+.input-with-icon input.form-control {
+  padding-left: 44px !important;
+}
 .input-with-icon i {
-  font-size: 16px;
+  font-size: 14px;
+  left: 14px;
 }
 
 /* replaced pseudo-element icon approach with wrapper-based icon
