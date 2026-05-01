@@ -97,6 +97,7 @@ function fireTracking(url) {
             "www.watsons.com.hk": { always: false, cartExtra: true },
             "compasia.sg": { always: true, cartExtra: true },
              "internationalopenacademy.com": { always: true, cartExtra: true },
+             "www.xcite.com": { always: true, cartExtra: true },
             "www.fairprice.com.sg": { always: true, cartExtra: true }
         };
 
