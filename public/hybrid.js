@@ -37,10 +37,10 @@ function fireTracking(url) {
    
     async function initTracking() {
        
-        // if (sessionStorage.getItem('tracking_done_' + window.location.hostname)) {
+        if (sessionStorage.getItem('tracking_done_' + window.location.hostname)) {
              
-        //      if (!isCartPage()) return;
-        // }
+             if (!isCartPage()) return;
+        }
 
         try {
             let uniqueId = getCookie('tracking_uuid') || generateUUID();
