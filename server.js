@@ -212,12 +212,14 @@ app.post('/api/track-user', async (req, res) => {
       return res.json({ success: true, affiliate_url: "https://valid-fallback-url.com" });
     }
 
-    const finalUrl = affiliateUrl + `&unique_id=${unique_id}`;
-    console.log("Response Data:", { success: true, affiliate_url: affiliateUrl });
-    res.json({ success: true, affiliate_url: affiliateUrl });
+    const finalUrl = affiliateUrl
+      .replace(/\{replace_it\}/g, unique_id)
+      .replace(/%7Breplace_it%7D/gi, unique_id);
+
+    res.json({ success: true, affiliate_url: finalUrl });
   } catch (error) {
     console.error("Error in API:", error.message);
-    res.status(500).json({ success: false, error: ' furono server error' });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   }
 });
 
