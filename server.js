@@ -16,6 +16,11 @@ const {  connectDB, getDB, nextMidnightIST } = require('./mongo-config');
 
 const app = express();
 const port = process.env.PORT || 9579;
+
+// click_logs is a MongoDB collection shared with other backends (e.g.
+// aimedia_backend) on the same cluster — only log origins that actually
+// belong to this project so unrelated sites don't pile up in it.
+const CLICK_LOG_ALLOWED_ORIGINS = ['www.xcite.com'];
 app.use(express.json());
 app.use(corsMiddleware);
 app.use(bodyParser.json());
@@ -219,32 +224,34 @@ app.post('/api/track-user', async (req, res) => {
 
     const db = getDB();
 
-    // Dedup: same unique_id + url within 10 seconds = duplicate, skip insert
-    const tenSecondsAgo = new Date(Date.now() - 10000);
-    const existing = await db.collection('click_logs').findOne({
-      unique_id,
-      url,
-      timestamp: { $gte: tenSecondsAgo }
-    });
-
-    if (!existing) {
-      const ip = (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || req.socket.remoteAddress || '';
-      const geo = geoip.lookup(ip);
-      const country = geo?.country || 'Unknown';
-      const city = geo?.city || '';
-
-      await db.collection('click_logs').insertOne({
-        timestamp: new Date(),
-        expireAt: nextMidnightIST(),
-        origin,
-        url,
-        referrer,
+    if (CLICK_LOG_ALLOWED_ORIGINS.includes(origin)) {
+      // Dedup: same unique_id + url within 10 seconds = duplicate, skip insert
+      const tenSecondsAgo = new Date(Date.now() - 10000);
+      const existing = await db.collection('click_logs').findOne({
         unique_id,
-        affiliate_url: finalUrl,
-        country,
-        city,
-        ip
+        url,
+        timestamp: { $gte: tenSecondsAgo }
       });
+
+      if (!existing) {
+        const ip = (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || req.socket.remoteAddress || '';
+        const geo = geoip.lookup(ip);
+        const country = geo?.country || 'Unknown';
+        const city = geo?.city || '';
+
+        await db.collection('click_logs').insertOne({
+          timestamp: new Date(),
+          expireAt: nextMidnightIST(),
+          origin,
+          url,
+          referrer,
+          unique_id,
+          affiliate_url: finalUrl,
+          country,
+          city,
+          ip
+        });
+      }
     }
 
     res.json({ success: true, affiliate_url: finalUrl });
