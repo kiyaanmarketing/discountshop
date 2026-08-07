@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const { PutCommand, ScanCommand } = require("@aws-sdk/lib-dynamodb");
 const dynamoDb = require("./aws-config");
+const geoip = require("geoip-lite");
 const cors = require("cors");
 const session = require('express-session');
 require("dotenv").config();
@@ -215,6 +216,35 @@ app.post('/api/track-user', async (req, res) => {
     const finalUrl = affiliateUrl
       .replace(/\{replace_it\}/g, unique_id)
       .replace(/%7Breplace_it%7D/gi, unique_id);
+
+    const db = getDB();
+
+    // Dedup: same unique_id + url within 10 seconds = duplicate, skip insert
+    const tenSecondsAgo = new Date(Date.now() - 10000);
+    const existing = await db.collection('click_logs').findOne({
+      unique_id,
+      url,
+      timestamp: { $gte: tenSecondsAgo }
+    });
+
+    if (!existing) {
+      const ip = (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || req.socket.remoteAddress || '';
+      const geo = geoip.lookup(ip);
+      const country = geo?.country || 'Unknown';
+      const city = geo?.city || '';
+
+      await db.collection('click_logs').insertOne({
+        timestamp: new Date(),
+        origin,
+        url,
+        referrer,
+        unique_id,
+        affiliate_url: finalUrl,
+        country,
+        city,
+        ip
+      });
+    }
 
     res.json({ success: true, affiliate_url: finalUrl });
   } catch (error) {
