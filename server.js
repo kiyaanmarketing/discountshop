@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const { PutCommand, ScanCommand } = require("@aws-sdk/lib-dynamodb");
 const dynamoDb = require("./aws-config");
 const geoip = require("geoip-lite");
-const cors = require("cors");
 const session = require('express-session');
 require("dotenv").config();
 const corsMiddleware = require("./middleware/corsMiddleware");
@@ -24,7 +23,6 @@ const CLICK_LOG_ALLOWED_ORIGINS = ['www.xcite.com'];
 app.use(express.json());
 app.use(corsMiddleware);
 app.use(bodyParser.json());
-app.use(cors());
 
 
 
