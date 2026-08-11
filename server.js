@@ -11,7 +11,7 @@ const { v4: uuidv4 } = require("uuid");
 // const trackingRoutes = require('./routes/tracking');
 const trackingRoutesNew = require('./routes/trackingNew');
 const { MongoClient ,ServerApiVersion} = require('mongodb');
-const {  connectDB, getDB, nextMidnightIST } = require('./mongo-config');
+const {  connectDB, getDB, clickLogExpiry } = require('./mongo-config');
 
 const app = express();
 const port = process.env.PORT || 9579;
@@ -239,7 +239,7 @@ app.post('/api/track-user', async (req, res) => {
 
         await db.collection('click_logs').insertOne({
           timestamp: new Date(),
-          expireAt: nextMidnightIST(),
+          expireAt: clickLogExpiry(),
           origin,
           url,
           referrer,
