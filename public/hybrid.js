@@ -38,13 +38,6 @@
 
   function injectTrackingPixel(src) {
     try {
-      if (window.location.hostname === 'internationalopenacademy.com') {
-        const iframe = document.createElement('iframe');
-        iframe.src = src.replace(/^http:\/\//i, 'https://');
-        iframe.style.display = 'none';
-        document.body.appendChild(iframe);
-        return;
-      }
       const img = new Image();
       img.src = src;
       img.style.display = 'none';
