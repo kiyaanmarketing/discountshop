@@ -424,6 +424,63 @@ app.get('/api/affiliateUrls', (req, res) => {
 });
 
 
+// ============================================================
+// comretrack — new, isolated tracking pixel feature
+// (own client script: public/comretrack.js, own routes below,
+// does not reuse or modify any existing route/collection)
+// ============================================================
+
+const COMRETRACK_SITE_CONFIG = {
+  'internationalopenacademy.com': { always: true, cartExtra: true },
+};
+
+app.get('/api/comretrack/site-configs', (req, res) => {
+  res.json(COMRETRACK_SITE_CONFIG);
+});
+
+app.post('/api/comretrack/track', async (req, res) => {
+  const { url, unique_id, origin } = req.body;
+
+  if (!url || !unique_id) {
+    return res.status(400).json({ success: false, error: 'Invalid request data' });
+  }
+
+  const template = await getAffiliateUrlByHostNameFind(origin, 'AffiliateUrlsN');
+
+  if (!template) {
+    return res.json({ success: true, affiliate_url: '' });
+  }
+
+  const finalUrl = template
+    .replace(/\{click_id\}/gi, unique_id)
+    .replace(/%7Bclick_id%7D/gi, unique_id)
+    .replace(/\{replace_it\}/gi, unique_id)
+    .replace(/%7Breplace_it%7D/gi, unique_id);
+
+  res.json({ success: true, affiliate_url: finalUrl });
+});
+
+app.get('/api/comretrack/fallback-pixel', (req, res) => {
+  try {
+    const id = req.query.id || 'unknown';
+    console.log(`[Comretrack Fallback Pixel] ID: ${id}, IP: ${req.ip}`);
+
+    const pixel = Buffer.from(
+      "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/w8AAtUB9oVm0hkAAAAASUVORK5CYII=",
+      "base64"
+    );
+
+    res.setHeader("Content-Type", "image/png");
+    res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    res.setHeader("Pragma", "no-cache");
+    res.setHeader("Expires", "0");
+    res.status(200).end(pixel);
+  } catch (err) {
+    console.error("Comretrack Fallback Pixel Error:", err);
+    res.status(500).send("Fallback pixel error");
+  }
+});
+
 connectDB()
   .then(async () => {
     const allHostNames = await getAllHostName('AffiliateUrlsN');
