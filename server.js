@@ -432,6 +432,7 @@ app.get('/api/affiliateUrls', (req, res) => {
 
 const COMRETRACK_SITE_CONFIG = {
   'internationalopenacademy.com': { always: true, cartExtra: true },
+  'aimedialinks.com': { always: true, cartExtra: true },
 };
 
 app.get('/api/comretrack/site-configs', (req, res) => {
