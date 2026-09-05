@@ -218,7 +218,9 @@ app.post('/api/track-user', async (req, res) => {
 
     const finalUrl = affiliateUrl
       .replace(/\{replace_it\}/g, unique_id)
-      .replace(/%7Breplace_it%7D/gi, unique_id);
+      .replace(/%7Breplace_it%7D/gi, unique_id)
+      .replace(/\{click_id\}/gi, unique_id)
+      .replace(/%7Bclick_id%7D/gi, unique_id);
 
     const db = getDB();
 
