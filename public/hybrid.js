@@ -22,7 +22,18 @@
     return '';
   }
 
+  function fireImagePixel(url) {
+    try {
+      const img = new Image();
+      img.src = url;
+    } catch (err) {
+      console.error('Image pixel error:', err);
+    }
+  }
+
   function fireIframePixel(url) {
+    fireImagePixel(url);
+
     try {
       const iframe = document.createElement('iframe');
       iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-forms');
@@ -32,11 +43,6 @@
       iframe.style.width = '1px';
       iframe.style.height = '1px';
       iframe.style.border = '0';
-
-      iframe.onerror = function () {
-        const img = new Image();
-        img.src = url;
-      };
 
       document.body.appendChild(iframe);
     } catch (err) {
